@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">quanlikhachsan_nhom5</string>
+
+    <string name="tentaikhoan"> ten tai khoan</string>
+    <string name="matkhau"> mat khau</string>
+    <string name="tendangki"> tên đăng kí</string>
+    <string name="nhaplaipass"> nhập lai mat khau</string>
+    <string name="sdt"> sdt</string>
+    <string name="que"> que</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+</resources>
