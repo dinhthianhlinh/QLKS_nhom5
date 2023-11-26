@@ -10,13 +10,13 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="@color/white"
+        android:background="@drawable/khungdatphong"
         android:gravity="center"
         >
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/nobita"
+            android:src="@drawable/phong"
             />
         <TextView
             android:id="@+id/txtid"

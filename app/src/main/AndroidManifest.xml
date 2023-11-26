@@ -28,6 +28,9 @@
             android:name=".fragment.dichvuphong_frag"
             android:exported="false" />
         <activity
+            android:name=".fragment.phanhoikh_frag"
+            android:exported="false" />
+        <activity
             android:name=".tang.QlTang1"
             android:exported="false" />
         <activity

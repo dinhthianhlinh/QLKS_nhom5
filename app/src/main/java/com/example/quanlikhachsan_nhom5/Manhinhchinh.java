@@ -78,6 +78,11 @@ public class Manhinhchinh extends AppCompatActivity {
                     Fragment fragment= new qlphong_frag();
                     fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
+                } else if (item.getItemId() == id.qlphong) {
+                    toolbar.setTitle("QUẢN LÍ PHÒNG");
+                    Fragment fragment= new qlphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+
                 } else if (item.getItemId() == id.qlttang) {
                     toolbar.setTitle("QUẢN LÍ TẦNG");
                     Fragment fragment = new qltang_frag();
@@ -99,8 +104,7 @@ public class Manhinhchinh extends AppCompatActivity {
 
                 } else if (item.getItemId() == id.phanhoikh) {
                     toolbar.setTitle("PHẢN HỒI CỦA KHÁCH HÀNG");
-                    Fragment fragment = new phanhoikh_frag();
-                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                    startActivity(new Intent(Manhinhchinh.this, phanhoikh_frag.class));
 
                 } else if (item.getItemId() == id.phanhoinv) {
                     toolbar.setTitle("PHẢN HỒI CỦA NHÂN VIÊN");

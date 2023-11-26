@@ -58,7 +58,6 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
             return list.size();
         return 0;
     }
-
     public static class viewholder extends RecyclerView.ViewHolder {
         TextView txtsott, txtten, txttuoi, txtgioitinh, txtsodienthoai,txtquequan,txtcancuoc,txtlandatphong;
 
