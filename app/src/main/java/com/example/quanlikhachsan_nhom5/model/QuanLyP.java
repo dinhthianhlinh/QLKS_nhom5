@@ -6,24 +6,19 @@ public class QuanLyP {
     private int sogioQLP;
     private int dongiaQLP;
     private int dichvukhQLP;
-    private int tongtienQLP;
+
     private int datcocQLP;
-    private int khachtra;
+
     private String inhoadonQLP;
 
 
-    public QuanLyP(int sophong, String ten_qlp, int sogio_qlp, int dongia_qlp, String dichvuk_qlp, int datcoc_qlp, String inhoadon_qlp) {
-    }
-
-    public QuanLyP(int sophongQLP, String tenQLP, int sogioQLP, int dongiaQLP, int dichvukhQLP, int tongtienQLP, int datcocQLP, int khachtra, String inhoadonQLP) {
+    public QuanLyP(int sophongQLP, String tenQLP, int sogioQLP, int dongiaQLP, int dichvukhQLP, int datcocQLP, String inhoadonQLP) {
         this.sophongQLP = sophongQLP;
         this.tenQLP = tenQLP;
         this.sogioQLP = sogioQLP;
         this.dongiaQLP = dongiaQLP;
         this.dichvukhQLP = dichvukhQLP;
-        this.tongtienQLP = tongtienQLP;
         this.datcocQLP = datcocQLP;
-        this.khachtra = khachtra;
         this.inhoadonQLP = inhoadonQLP;
     }
 
@@ -67,28 +62,12 @@ public class QuanLyP {
         this.dichvukhQLP = dichvukhQLP;
     }
 
-    public int getTongtienQLP() {
-        return tongtienQLP;
-    }
-
-    public void setTongtienQLP(int tongtienQLP) {
-        this.tongtienQLP = tongtienQLP;
-    }
-
     public int getDatcocQLP() {
         return datcocQLP;
     }
 
     public void setDatcocQLP(int datcocQLP) {
         this.datcocQLP = datcocQLP;
-    }
-
-    public int getKhachtra() {
-        return khachtra;
-    }
-
-    public void setKhachtra(int khachtra) {
-        this.khachtra = khachtra;
     }
 
     public String getInhoadonQLP() {

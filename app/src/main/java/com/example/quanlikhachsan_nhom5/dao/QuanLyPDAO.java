@@ -1,5 +1,6 @@
 package com.example.quanlikhachsan_nhom5.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,20 +29,32 @@ public class QuanLyPDAO {
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
-                int sophong = cursor.getInt(0);
-                String ten_qlp = cursor.getString(1);
-                int sogio_qlp = cursor.getInt(2);
-                int dongia_qlp = cursor.getInt(3);
-                String dichvuk_qlp = cursor.getString(4);
-                int datcoc_qlp = cursor.getInt(5);
-                String inhoadon_qlp = cursor.getString(6);
+                int SOPHONG = cursor.getInt(0);
+                String TEN_QLP = cursor.getString(1);
+                int SOGIO_QLP = cursor.getInt(2);
+                int DONGIA_QLP = cursor.getInt(3);
+                int DICHVUK_QLP = cursor.getInt(4);
+                int DATCOC_QLP = cursor.getInt(5);
+                String INHOAD_QLP = cursor.getString(6);
 
 
 
-                QuanLyP qlp = new QuanLyP(sophong , ten_qlp, sogio_qlp,dongia_qlp, dichvuk_qlp, datcoc_qlp,inhoadon_qlp);
+                QuanLyP qlp = new QuanLyP(SOPHONG , TEN_QLP, SOGIO_QLP,DONGIA_QLP, DICHVUK_QLP, DATCOC_QLP,INHOAD_QLP);
                 list.add(qlp);
             } while (cursor.moveToNext());
         }
         return list;
+    }
+    public long insertP(QuanLyP QLP){
+        ContentValues values = new ContentValues();
+        values.put("SOPHONG", QLP.getSophongQLP());
+        values.put("TEN_QLP", QLP.getTenQLP());
+        values.put("DONGIA_QLP", QLP.getDongiaQLP());
+        values.put("DICHVUK_QLP", QLP.getDichvukhQLP());
+        values.put("DATCOC_QLP", QLP.getDatcocQLP());
+        values.put("INHOAD_QLP", QLP.getInhoadonQLP());
+
+        long result = db.insert("QLP", null, values);
+        return result;
     }
 }

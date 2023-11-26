@@ -45,7 +45,7 @@ public class QuanLyPAdapter extends RecyclerView.Adapter<QuanLyPAdapter.viewhold
         holder.txtdichvukh_qlp.setText("Dịch vụ sử dụng: "+String.valueOf(list.get(position).getDichvukhQLP()));
         holder.txttongtien_qlp.setText("Tổng Tiền: "+ (Double.valueOf(list.get(position).getDongiaQLP())+Double.valueOf(list.get(position).getDichvukhQLP())));
         holder.txtdatcoc_qlp.setText("Đặt cọc: "+String.valueOf(list.get(position).getDatcocQLP()));
-        holder.txtkhachtra_qlp.setText("Khách Trả: "+String.valueOf(list.get(position).getKhachtra()));
+        holder.txtkhachtra_qlp.setText("Khách Trả: "+(Double.valueOf(list.get(position).getDongiaQLP())+Double.valueOf(list.get(position).getDichvukhQLP())- Double.valueOf(list.get(position).getDatcocQLP())));
         holder.txtinhoadon_qlp.setText(list.get(position).getInhoadonQLP());
     }
 
