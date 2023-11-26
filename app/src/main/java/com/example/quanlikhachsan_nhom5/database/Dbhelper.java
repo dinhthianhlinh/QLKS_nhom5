@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper( Context context) {
-        super(context, "QLKS",null, 7);
+        super(context, "QLKS",null, 16);
     }
 
     @Override
@@ -74,6 +74,28 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(9,'409','4','100000d','Phong don')," +
                 "(10,'410','4','200000d','Phong doi')");
 
+        String datphong = "CREATE TABLE DATPHONG (id integer primary key autoincrement, sophong text, sotang text, giaphong text, hangphong text)";
+        db.execSQL(datphong);
+        db.execSQL("INSERT INTO DATPHONG VALUES (1,'301','4','200000d','Phong doi')," +
+                "(2,'402','4','100000d','Phong don')," +
+                "(3,'403','4','200000d','Phong doi')," +
+                "(4,'404','4','100000d','Phong don')," +
+                "(5,'405','4','200000d','Phong doi')," +
+                "(6,'306','3','200000d','Phong doi')," +
+                "(7,'307','3','100000d','Phong don')," +
+                "(8,'208','2','200000d','Phong doi')," +
+                "(9,'209','2','100000d','Phong don')," +
+                "(10,'410','4','200000d','Phong doi')");
+
+
+
+
+        String quanlykhachhang = "CREATE TABLE QLKH (STT integer primary key autoincrement, TEN text, TUOI integer, GIOITINH text,  SODT integer," +
+                " QUEQUAN text, CANCUOC integer,SOLANDP integer)";
+        db.execSQL(quanlykhachhang);
+        db.execSQL("INSERT INTO QLKH VALUES (1,'dinhlinh',19,'nam',0971222222,'hà nam',12345, 2)" );
+
+
 
 
     }
@@ -82,10 +104,12 @@ public class Dbhelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         if (i != i1){
             db.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
+            db.execSQL("DROP TABLE IF EXISTS QLKH");
             db.execSQL("DROP TABLE IF EXISTS TANG1");
             db.execSQL("DROP TABLE IF EXISTS TANG2");
             db.execSQL("DROP TABLE IF EXISTS TANG3");
             db.execSQL("DROP TABLE IF EXISTS TANG4");
+            db.execSQL("DROP TABLE IF EXISTS DATPHONG");
 
             onCreate(db);
         }

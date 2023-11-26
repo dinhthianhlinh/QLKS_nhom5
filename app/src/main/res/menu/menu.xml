@@ -4,16 +4,11 @@
     <item android:title="QUẢN LÍ KHÁCH HÀNG " android:id="@+id/qlkh"/>
     <item android:title="QUẢN LÍ PHÒNG" android:id="@+id/qlphong"/>
     <item android:title="QUẢN LÍ TẨNG" android:id="@+id/qlttang"/>
-    <item android:title="PHẢN HỒI">
-        <menu>
-            <item android:title="PHẢN HỒI CỦA KHÁCH HÀNG" android:id="@+id/phanhoikh"/>
-            <item android:title="PHẢN HỒI CỦA NHÂN VIÊN" android:id="@+id/phanhoinv"/>
-        </menu>
-    </item>
+
     <item android:title="thong ke">
         <menu>
             <item android:title="thongke" android:id="@+id/thongke"/>
-            <item android:title="thongke" android:id="@+id/baocao"/>
+            <item android:title="Báo cáo" android:id="@+id/baocao"/>
         </menu>
     </item>
     <item android:title="check-in" android:id="@+id/checkin"/>
@@ -21,7 +16,13 @@
     <item android:title="ĐĂT PHÒNG" android:id="@+id/datphong"/>
     <item android:title="DỊCH VỤ PHÒNG" android:id="@+id/dichvuphong"/>
 
-
+    <item android:title="PHẢN HỒI">
+    <menu>
+        <item android:title="QUẢN LÍ PHẢN HỒI" android:id="@+id/qlphoi"/>
+        <item android:title="PHẢN HỒI CỦA KHÁCH HÀNG" android:id="@+id/phanhoikh"/>
+        <item android:title="PHẢN HỒI CỦA NHÂN VIÊN" android:id="@+id/phanhoinv"/>
+    </menu>
+</item>
 
 
 </menu>

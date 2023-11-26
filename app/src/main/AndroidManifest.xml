@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Quanlikhachsan_nhom5"
         tools:targetApi="31">
         <activity
+            android:name=".fragment.QuanLiPhanHoi"
+            android:exported="false" />
+        <activity
+            android:name=".quanlidichvu.DatDoAn"
+            android:exported="false" />
+        <activity
+            android:name=".quanlidichvu.GiatUi"
+            android:exported="false" />
+        <activity
+            android:name=".quanlidichvu.BaoThuc"
+            android:exported="false" />
+        <activity
+            android:name=".fragment.dichvuphong_frag"
+            android:exported="false" />
+        <activity
             android:name=".tang.QlTang1"
             android:exported="false" />
         <activity
@@ -23,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".tang.Tang2"
-            android:exported="false" />
-        <activity
-            android:name=".tang.Tang1"
             android:exported="false" />
         <activity
             android:name=".ManHinhKhachHang.TrangChu"
@@ -57,6 +69,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".fragment.datphong_frag" />
     </application>
 
 </manifest>
