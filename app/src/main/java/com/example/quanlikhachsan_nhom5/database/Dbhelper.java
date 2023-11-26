@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper( Context context) {
-        super(context, "QLKS",null, 3);
+        super(context, "QLKS",null, 7);
     }
 
     @Override
@@ -20,12 +20,72 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(2,'nguyendang','123456789','vinhphuc','nguyen12','1290',2)," +
                 "(3,'nguyenhoc','987654321','hanam','hoc34','12347',3)");
 
+
+
+        String Tang1 = "CREATE TABLE TANG1 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        db.execSQL(Tang1);
+        db.execSQL("INSERT INTO TANG1 VALUES (1,'101','1','200000d','Phong doi')," +
+                "(2,'102','1','100000d','Phong don')," +
+                "(3,'103','1','100000d','Phong don')," +
+                "(4,'104','1','100000d','Phong don')," +
+                "(5,'105','1','200000d','Phong doi')," +
+                "(6,'106','1','200000d','Phong doi')," +
+                "(7,'107','1','100000d','Phong don')," +
+                "(8,'108','1','200000d','Phong doi')," +
+                "(9,'108','1','200000d','Phong doi')," +
+                "(10,'110','1','200000d','Phong doi')");
+
+        String Tang2 = "CREATE TABLE TANG2 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        db.execSQL(Tang2);
+        db.execSQL("INSERT INTO TANG2 VALUES (1,'201','2','200000d','Phong doi')," +
+                "(2,'202','2','100000d','Phong don')," +
+                "(3,'203','2','200000d','Phong doi')," +
+                "(4,'204','2','100000d','Phong don')," +
+                "(5,'205','2','200000d','Phong doi')," +
+                "(6,'206','2','200000d','Phong doi')," +
+                "(7,'207','2','100000d','Phong don')," +
+                "(8,'208','2','200000d','Phong doi')," +
+                "(9,'209','2','100000d','Phong don')," +
+                "(10,'210','2','200000d','Phong doi')");
+
+        String Tang3 = "CREATE TABLE TANG3 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        db.execSQL(Tang3);
+        db.execSQL("INSERT INTO TANG3 VALUES (1,'301','3','200000d','Phong doi')," +
+                "(2,'302','3','100000d','Phong don')," +
+                "(3,'303','3','200000d','Phong doi')," +
+                "(4,'304','3','100000d','Phong don')," +
+                "(5,'305','3','200000d','Phong doi')," +
+                "(6,'306','3','200000d','Phong doi')," +
+                "(7,'307','3','100000d','Phong don')," +
+                "(8,'308','3','200000d','Phong doi')," +
+                "(9,'309','3','100000d','Phong don')," +
+                "(10,'310','3','200000d','Phong doi')");
+
+        String Tang4 = "CREATE TABLE TANG4 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        db.execSQL(Tang4);
+        db.execSQL("INSERT INTO TANG4 VALUES (1,'301','4','200000d','Phong doi')," +
+                "(2,'402','4','100000d','Phong don')," +
+                "(3,'403','4','200000d','Phong doi')," +
+                "(4,'404','4','100000d','Phong don')," +
+                "(5,'405','4','200000d','Phong doi')," +
+                "(6,'406','4','200000d','Phong doi')," +
+                "(7,'407','4','100000d','Phong don')," +
+                "(8,'408','4','200000d','Phong doi')," +
+                "(9,'409','4','100000d','Phong don')," +
+                "(10,'410','4','200000d','Phong doi')");
+
+
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         if (i != i1){
             db.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
+            db.execSQL("DROP TABLE IF EXISTS TANG1");
+            db.execSQL("DROP TABLE IF EXISTS TANG2");
+            db.execSQL("DROP TABLE IF EXISTS TANG3");
+            db.execSQL("DROP TABLE IF EXISTS TANG4");
 
             onCreate(db);
         }

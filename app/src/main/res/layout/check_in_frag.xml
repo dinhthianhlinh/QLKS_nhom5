@@ -2,6 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="@drawable/checkin"
     android:layout_height="match_parent">
+
+    <!-- Nút Checkin - online -->
+    <Button
+        android:id="@+id/btnCheckinOnline"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Checkin - online" />
+
+    <!-- Nút Check-in trực tiếp -->
+    <Button
+        android:id="@+id/btnCheckinTructiep"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Check-in trực tiếp" />
 
 </LinearLayout>

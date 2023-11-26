@@ -5,42 +5,46 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/login"
+    android:background="@drawable/loginsiu"
     android:gravity="center"
     tools:context=".Login">
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="LOGIN"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:gravity="center"
+        android:layout_marginTop="200dp"
 
-        />
+        android:orientation="vertical"
+        >
     <EditText
         android:id="@+id/edtUser"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:paddingTop="50dp"
         android:hint="@string/tentaikhoan"
         />
     <EditText
         android:id="@+id/edtPass"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:layout_gravity="center"
+        android:paddingTop="50dp"
         android:hint="@string/matkhau"
         />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+       android:paddingTop="50dp"
         >
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#60F60000"
+            android:backgroundTint="@color/black"
             android:text="LOGIN"
             android:textColor="@android:color/white"
             android:textStyle="bold"
@@ -52,8 +56,8 @@
             android:id="@+id/btnDangKi"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#60F60000"
-            android:text="DANG KI"
+            android:backgroundTint="@color/black"
+            android:text="sign up"
             android:textColor="@android:color/white"
             android:layout_marginLeft="20dp"
             android:textStyle="bold"
