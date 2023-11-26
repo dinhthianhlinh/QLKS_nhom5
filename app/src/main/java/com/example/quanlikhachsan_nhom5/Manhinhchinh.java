@@ -23,6 +23,7 @@ import com.example.quanlikhachsan_nhom5.fragment.dichvuphong_frag;
 import com.example.quanlikhachsan_nhom5.fragment.phanhoikh_frag;
 import com.example.quanlikhachsan_nhom5.fragment.phanhoinv_frag;
 import com.example.quanlikhachsan_nhom5.fragment.qlkh_frag;
+import com.example.quanlikhachsan_nhom5.fragment.qlphong_frag;
 import com.example.quanlikhachsan_nhom5.fragment.qltang_frag;
 import com.example.quanlikhachsan_nhom5.fragment.qltk_frag;
 import com.example.quanlikhachsan_nhom5.fragment.thongke_frag;
@@ -66,6 +67,10 @@ public class Manhinhchinh extends AppCompatActivity {
                 } else if (item.getItemId() == id.qlkh) {
                     toolbar.setTitle("QUẢN LÍ KHÁCH HÀNG");
                     fragment = new qlkh_frag();
+
+                } else if (item.getItemId() == id.qlphong) {
+                    toolbar.setTitle("QUẢN LÍ PHÒNG");
+                    fragment = new qlphong_frag();
 
                 } else if (item.getItemId() == id.qlttang) {
                     toolbar.setTitle("QUẢN LÍ TẦNG");
@@ -150,9 +155,10 @@ public class Manhinhchinh extends AppCompatActivity {
         }
 
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             drawerLayout.openDrawer(GravityCompat.START);
         }
         return super.onOptionsItemSelected(item);

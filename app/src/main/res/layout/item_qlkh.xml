@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtsott"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="STT:01"
+                android:textSize="13dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="58dp"
+                android:src="@drawable/avata" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="5dp">
+
+            <TextView
+                android:id="@+id/txtten"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nguyễn Công Học"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/txttuoi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="19"
+                android:textStyle="italic"
+                />
+
+            <TextView
+                android:id="@+id/txtgioitinh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nam"
+                />
+            <TextView
+                android:id="@+id/txtsodienthoai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0971268289"
+                />
+            <TextView
+                android:id="@+id/txtquequan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hà Nam"
+                />
+            <TextView
+                android:id="@+id/txtcancuoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0353333333333"
+                />
+            <TextView
+                android:id="@+id/txtlandatphong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:paddingLeft="5dp"
+            android:layout_weight="0.1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            >
+
+            <ImageButton
+                android:id="@+id/btnDeleteQLKH"
+                android:layout_width="38dp"
+                android:layout_height="35dp"
+                android:background="@drawable/baseline_delete_24"
+
+                />
+            <ImageButton
+                android:id="@+id/btnEditQLKH"
+                android:layout_width="38dp"
+                android:layout_height="35dp"
+                android:background="@drawable/baseline_edit_24"
+                />
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

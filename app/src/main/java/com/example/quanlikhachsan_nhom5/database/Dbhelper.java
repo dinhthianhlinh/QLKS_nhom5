@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper( Context context) {
-        super(context, "QLKS",null, 7);
+        super(context, "QLKS",null, 14);
     }
 
     @Override
@@ -76,12 +76,22 @@ public class Dbhelper extends SQLiteOpenHelper {
 
 
 
+
+        String quanlykhachhang = "CREATE TABLE QLKH (STT integer primary key autoincrement, TEN text, TUOI integer, GIOITINH text,  SODT integer," +
+                " QUEQUAN text, CANCUOC integer,SOLANDP integer)";
+        db.execSQL(quanlykhachhang);
+        db.execSQL("INSERT INTO QLKH VALUES (1,'dinhlinh',19,'nam',0971222222,'hà nam',12345, 2)" );
+
+
+
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         if (i != i1){
             db.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
+            db.execSQL("DROP TABLE IF EXISTS QLKH");
             db.execSQL("DROP TABLE IF EXISTS TANG1");
             db.execSQL("DROP TABLE IF EXISTS TANG2");
             db.execSQL("DROP TABLE IF EXISTS TANG3");
