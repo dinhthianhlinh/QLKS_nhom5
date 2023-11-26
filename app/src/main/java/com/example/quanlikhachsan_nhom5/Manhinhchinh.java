@@ -78,6 +78,11 @@ public class Manhinhchinh extends AppCompatActivity {
                     Fragment fragment= new qlphong_frag();
                     fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
+                } else if (item.getItemId() == id.qlphong) {
+                    toolbar.setTitle("QUẢN LÍ PHÒNG");
+                    Fragment fragment= new qlphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+
                 } else if (item.getItemId() == id.qlttang) {
                     toolbar.setTitle("QUẢN LÍ TẦNG");
                     Fragment fragment = new qltang_frag();
