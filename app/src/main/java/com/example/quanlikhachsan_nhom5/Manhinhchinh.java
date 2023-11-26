@@ -9,12 +9,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.quanlikhachsan_nhom5.fragment.QuanLiPhanHoi;
 import com.example.quanlikhachsan_nhom5.fragment.baocao_frag;
 import com.example.quanlikhachsan_nhom5.fragment.check_in_frag;
 import com.example.quanlikhachsan_nhom5.fragment.check_out_frag;
@@ -59,61 +62,73 @@ public class Manhinhchinh extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                Fragment fragment;
+                FragmentManager fragmentManager = getSupportFragmentManager();
                 if (item.getItemId() == id.qltk) {
                     toolbar.setTitle("QUẢN LÍ TÀI KHOẢN");
-                    fragment = new qltk_frag();
+                    Fragment fragment = new qltk_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.qlkh) {
-                    toolbar.setTitle("QUẢN LÍ KHÁCH HÀNG");
-                    fragment = new qlkh_frag();
+                    toolbar.setTitle("QUẢN LÍ Khách hang");
+                    Fragment fragment = new qlkh_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.qlphong) {
                     toolbar.setTitle("QUẢN LÍ PHÒNG");
-                    fragment = new qlphong_frag();
+                    Fragment fragment= new qlphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+
+                } else if (item.getItemId() == id.qlphong) {
+                    toolbar.setTitle("QUẢN LÍ PHÒNG");
+                    Fragment fragment= new qlphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.qlttang) {
                     toolbar.setTitle("QUẢN LÍ TẦNG");
-                    fragment = new qltang_frag();
+                    Fragment fragment = new qltang_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                } else if (item.getItemId() == id.checkin) {
+                    toolbar.setTitle("CHECK-IN");
+                    Fragment fragment = new check_in_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                } else if (item.getItemId() == id.checkout) {
+                    toolbar.setTitle("CHECK-OUT");
+                    Fragment fragment= new check_out_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                } else if (item.getItemId() == id.dichvuphong) {
+                    toolbar.setTitle("DỊCH VỤ PHÒNG");
+                    startActivity(new Intent(Manhinhchinh.this, dichvuphong_frag.class));
+                } else if (item.getItemId() == id.datphong) {
+                    toolbar.setTitle("ĐẶT PHÒNG");
+                    startActivity(new Intent(Manhinhchinh.this, datphong_frag.class));
 
                 } else if (item.getItemId() == id.phanhoikh) {
                     toolbar.setTitle("PHẢN HỒI CỦA KHÁCH HÀNG");
-                    fragment = new phanhoikh_frag();
+                    Fragment fragment = new phanhoikh_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.phanhoinv) {
                     toolbar.setTitle("PHẢN HỒI CỦA NHÂN VIÊN");
-                    fragment = new phanhoinv_frag();
+                    Fragment fragment= new phanhoinv_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
-
-                } else if (item.getItemId() == id.checkin) {
-                    toolbar.setTitle("CHECK-IN");
-                    fragment = new check_in_frag();
-
-                } else if (item.getItemId() == id.checkout) {
-                    toolbar.setTitle("CHECK-OUT");
-                    fragment = new check_out_frag();
-
-                } else if (item.getItemId() == id.dichvuphong) {
-                    toolbar.setTitle("DỊCH VỤ PHÒNG");
-                    fragment = new dichvuphong_frag();
-
-                } else if (item.getItemId() == id.datphong) {
-                    toolbar.setTitle("ĐẶT PHÒNG");
-                    fragment = new datphong_frag();
-
-                } else if (item.getItemId() == id.thongke) {
-                    toolbar.setTitle("THỐNG KÊ");
-                    fragment = new thongke_frag();
-
-                } else {
-                    toolbar.setTitle("BÁO CÁO ");
-                    fragment = new baocao_frag();
+                } else if (item.getItemId() == id.qlphoi) {
+                    toolbar.setTitle("QUẢN LÍ PHẢN HỒI");
+                    startActivity(new Intent(Manhinhchinh.this, QuanLiPhanHoi.class));
 
                 }
-                getSupportFragmentManager().beginTransaction().replace(id.fragmentlayout, fragment).commit();
-                drawerLayout.close();
-
-                return true;
+                else if (item.getItemId() == id.thongke) {
+                    toolbar.setTitle("THỐNG KÊ");
+                    Fragment fragment= new thongke_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                } else {
+                    toolbar.setTitle("BÁO CÁO ");
+                    Fragment fragment = new baocao_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                setTitle(item.getTitle());
+                return false;
             }
         });
         SharedPreferences sharedPreferences = getSharedPreferences("dataUser", MODE_PRIVATE);
@@ -127,6 +142,10 @@ public class Manhinhchinh extends AppCompatActivity {
                 menu.findItem(id.thongke).setVisible(false);
                 menu.findItem(id.baocao).setVisible(false);
                 menu.findItem(id.phanhoinv).setVisible(false);
+                menu.findItem(id.qlphoi).setVisible(false);
+                menu.findItem(id.checkin).setVisible(false);
+                menu.findItem(id.checkout).setVisible(false);
+                menu.findItem(id.qlphong).setVisible(false);
                 break;
             case 2:
                 Menu menu2 = navigationView.getMenu();
@@ -136,10 +155,13 @@ public class Manhinhchinh extends AppCompatActivity {
                 menu2.findItem(id.dichvuphong).setVisible(false);
                 menu2.findItem(id.thongke).setVisible(false);
                 menu2.findItem(id.baocao).setVisible(false);
+                menu2.findItem(id.qlphoi).setVisible(false);
                 break;
             case 3:
                 Menu menu3 = navigationView.getMenu();
                 menu3.findItem(id.dichvuphong).setVisible(false);
+                menu3.findItem(id.phanhoinv).setVisible(false);
+                menu3.findItem(id.phanhoikh).setVisible(false);
                 break;
 
             default:
@@ -151,6 +173,7 @@ public class Manhinhchinh extends AppCompatActivity {
                 menu4.findItem(id.baocao).setVisible(false);
                 menu4.findItem(id.phanhoinv).setVisible(false);
                 menu4.findItem(id.dichvuphong).setVisible(false);
+                menu4.findItem(id.qlphoi).setVisible(false);
                 break;
         }
 

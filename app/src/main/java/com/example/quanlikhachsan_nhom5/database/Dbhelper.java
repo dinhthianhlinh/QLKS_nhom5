@@ -9,7 +9,8 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper( Context context) {
-        super(context, "QLKS",null, 15);
+        super(context, "QLKS",null, 19);
+
     }
 
     @Override
@@ -76,6 +77,41 @@ public class Dbhelper extends SQLiteOpenHelper {
 
 
 
+        String DatPhong = "CREATE TABLE DATPHONG (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        db.execSQL(DatPhong);
+        db.execSQL("INSERT INTO DATPHONG VALUES (1,'301','4','200000d','Phong doi')," +
+                "(2,'402','4','100000d','Phong don')," +
+                "(3,'403','4','200000d','Phong doi')," +
+                "(4,'404','4','100000d','Phong don')," +
+                "(5,'405','4','200000d','Phong doi')," +
+                "(6,'406','4','200000d','Phong doi')," +
+                "(7,'407','4','100000d','Phong don')," +
+                "(8,'408','4','200000d','Phong doi')," +
+                "(9,'409','4','100000d','Phong don')," +
+                "(10,'301','4','200000d','Phong doi')," +
+                "(11,'302','3','100000d','Phong don')," +
+                "(12,'303','3','200000d','Phong doi')," +
+                "(13,'304','3','100000d','Phong don')," +
+                "(14,'305','3','200000d','Phong doi')," +
+                "(15,'306','3','200000d','Phong doi')," +
+                "(16,'307','3','100000d','Phong don')," +
+                "(17,'308','3','200000d','Phong doi')," +
+                "(18,'309','3','100000d','Phong don')," +
+                "(19,'202','2','100000d','Phong don')," +
+                "(20,'203','2','200000d','Phong doi')," +
+                "(21,'204','2','100000d','Phong don')," +
+                "(22,'205','2','200000d','Phong doi')," +
+                "(23,'206','2','200000d','Phong doi')," +
+                "(24,'207','2','100000d','Phong don')," +
+                "(25,'208','2','200000d','Phong doi')," +
+                "(26,'209','2','100000d','Phong don')," +
+                "(27,'210','2','200000d','Phong doi'),"+
+                "(28,'102','1','100000d','Phong don')," +
+                "(29,'103','1','100000d','Phong don')," +
+                "(30,'410','4','200000d','Phong doi')");
+
+
+
 
         String quanlykhachhang = "CREATE TABLE QLKH (STT integer primary key autoincrement, TEN text, TUOI integer, GIOITINH text,  SODT integer," +
                 " QUEQUAN text, CANCUOC integer,SOLANDP integer)";
@@ -103,6 +139,7 @@ public class Dbhelper extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS TANG2");
             db.execSQL("DROP TABLE IF EXISTS TANG3");
             db.execSQL("DROP TABLE IF EXISTS TANG4");
+            db.execSQL("DROP TABLE IF EXISTS DATPHONG");
 
             onCreate(db);
         }
