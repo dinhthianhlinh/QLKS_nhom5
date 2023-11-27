@@ -9,9 +9,13 @@ import android.database.sqlite.SQLiteDatabase;
 import com.example.quanlikhachsan_nhom5.database.Dbhelper;
 import com.example.quanlikhachsan_nhom5.model.NguoiDung;
 
+import java.util.ArrayList;
+
 public class NguoiDungDao {
 
     private Dbhelper dbHelper;
+
+
     SharedPreferences sharedPreferences;
 
     public  NguoiDungDao(Context context){
@@ -76,5 +80,25 @@ public class NguoiDungDao {
         return check != -1;
 
 
+    }
+    public ArrayList<NguoiDung> getAllData() {
+        ArrayList<NguoiDung> list = new ArrayList<>();
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM NGUOIDUNG", null);
+        if (cursor.getCount() > 0) {
+            cursor.moveToFirst();
+            do {
+
+                String tennd = cursor.getString(0);
+                String sdt = cursor.getString(1);
+                String diachi = cursor.getString(2);
+                String tendn = cursor.getString(3);
+                String matkhau = cursor.getString(4);
+
+                 NguoiDung nd  = new NguoiDung( tennd, sdt, diachi, tendn, matkhau);
+                list.add(nd);
+            } while (cursor.moveToNext());
+        }
+        return list;
     }
 }

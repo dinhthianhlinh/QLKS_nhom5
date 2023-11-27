@@ -26,6 +26,8 @@ public class NguoiDung {
         this.matkhau = matkhau;
     }
 
+
+
     public int getMand() {
         return mand;
     }
