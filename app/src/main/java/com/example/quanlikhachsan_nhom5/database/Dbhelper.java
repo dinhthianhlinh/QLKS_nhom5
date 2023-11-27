@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper( Context context) {
-        super(context, "QLKS",null, 26);
+        super(context, "QLKS",null, 28);
     }
 
     @Override
@@ -22,7 +22,7 @@ public class Dbhelper extends SQLiteOpenHelper {
 
 
 
-        String Tang1 = "CREATE TABLE TANG1 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        String Tang1 = "CREATE TABLE TANG1 (id integer primary key autoincrement, sophong text, sotang text, giaphing integer, hangphong text)";
         db.execSQL(Tang1);
         db.execSQL("INSERT INTO TANG1 VALUES (1,'101','1','200000d','Phong doi')," +
                 "(2,'102','1','100000d','Phong don')," +
@@ -35,7 +35,7 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(9,'108','1','200000d','Phong doi')," +
                 "(10,'110','1','200000d','Phong doi')");
 
-        String Tang2 = "CREATE TABLE TANG2 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        String Tang2 = "CREATE TABLE TANG2 (id integer primary key autoincrement, sophong text, sotang text, giaphing integer, hangphong text)";
         db.execSQL(Tang2);
         db.execSQL("INSERT INTO TANG2 VALUES (1,'201','2','200000d','Phong doi')," +
                 "(2,'202','2','100000d','Phong don')," +
@@ -48,7 +48,7 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(9,'209','2','100000d','Phong don')," +
                 "(10,'210','2','200000d','Phong doi')");
 
-        String Tang3 = "CREATE TABLE TANG3 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        String Tang3 = "CREATE TABLE TANG3 (id integer primary key autoincrement, sophong text, sotang text, giaphing integer, hangphong text)";
         db.execSQL(Tang3);
         db.execSQL("INSERT INTO TANG3 VALUES (1,'301','3','200000d','Phong doi')," +
                 "(2,'302','3','100000d','Phong don')," +
@@ -61,7 +61,7 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(9,'309','3','100000d','Phong don')," +
                 "(10,'310','3','200000d','Phong doi')");
 
-        String Tang4 = "CREATE TABLE TANG4 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        String Tang4 = "CREATE TABLE TANG4 (id integer primary key autoincrement, sophong text, sotang text, giaphing integer, hangphong text)";
         db.execSQL(Tang4);
         db.execSQL("INSERT INTO TANG4 VALUES (1,'301','4','200000d','Phong doi')," +
                 "(2,'402','4','100000d','Phong don')," +
@@ -76,7 +76,7 @@ public class Dbhelper extends SQLiteOpenHelper {
 
 
 
-        String DatPhong = "CREATE TABLE DATPHONG (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
+        String DatPhong = "CREATE TABLE DATPHONG (id integer primary key autoincrement, sophong text, sotang text, giaphing integer, hangphong text)";
         db.execSQL(DatPhong);
         db.execSQL("INSERT INTO DATPHONG VALUES (1,'301','4','200000d','Phong doi')," +
                 "(2,'402','4','100000d','Phong don')," +
