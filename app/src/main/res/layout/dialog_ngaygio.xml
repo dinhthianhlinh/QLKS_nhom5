@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Calendar View -->
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Check-in Time Label -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giờ Nhận Phòng"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Time Slot Options -->
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- 2 hours option -->
+        <RadioButton
+            android:id="@+id/radioButton2Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2 giờ" />
+
+        <!-- 3 hours option -->
+        <RadioButton
+            android:id="@+id/radioButton3Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3 giờ" />
+
+        <!-- 4 hours option -->
+        <RadioButton
+            android:id="@+id/radioButton4Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4 giờ" />
+
+        <!-- 5 hours option -->
+        <RadioButton
+            android:id="@+id/radioButton5Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 giờ" />
+
+        <!-- 6 hours option -->
+
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioButton6Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6 giờ" />
+
+        <!-- 7 hours option -->
+        <RadioButton
+            android:id="@+id/radioButton7Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7 giờ" />
+
+        <!-- Overnight option -->
+        <RadioButton
+            android:id="@+id/radioButtonOvernight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qua đêm" />
+
+        <!-- Day rental option -->
+        <RadioButton
+            android:id="@+id/radioButtonDayRental"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Theo ngày" />
+
+    </RadioGroup>
+
+
+
+    <!-- Apply Button -->
+    <Button
+        android:id="@+id/applyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Áp dụng"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

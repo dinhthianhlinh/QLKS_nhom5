@@ -1,27 +1,20 @@
 package com.example.quanlikhachsan_nhom5.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.EditText;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.example.quanlikhachsan_nhom5.Adapter.DatPhongAdapter;
-import com.example.quanlikhachsan_nhom5.Adapter.Tang1Adapter;
 import com.example.quanlikhachsan_nhom5.R;
 import com.example.quanlikhachsan_nhom5.dao.DatPhongDao;
-import com.example.quanlikhachsan_nhom5.dao.Tang1Dao;
 import com.example.quanlikhachsan_nhom5.model.DatPhong;
-import com.example.quanlikhachsan_nhom5.model.Tang1;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
@@ -30,22 +23,37 @@ public class datphong_frag extends AppCompatActivity {
     private DatPhongDao datPhongDao;
     private ArrayList<DatPhong> list;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.datphong_frag);
 
-        RecyclerView recyclerViewQLTK = findViewById(R.id.Rcvdp);
-
+        RecyclerView recyclerView = findViewById(R.id.Rcvdp);
         datPhongDao = new DatPhongDao(this);
         list = datPhongDao.getDSDatPhong();
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL);
-        recyclerViewQLTK.setLayoutManager(gridLayoutManager);
-        datPhongAdapter = new DatPhongAdapter(this, list,this);
-        recyclerViewQLTK.setAdapter(datPhongAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        datPhongAdapter = new DatPhongAdapter(this, list);
 
+        datPhongAdapter.setOnItemClickedListener(datPhong -> {
+            Dialog dialog = new Dialog(this);
+            dialog.setContentView(R.layout.dialog_qlp);
+            EditText editTextRoomNumber = dialog.findViewById(R.id.editTextRoomNumber);
+            editTextRoomNumber.setText(datPhong.getSophong());
+
+            // Điều chỉnh kích thước dialog
+            Window window = dialog.getWindow();
+            if (window != null) {
+                WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+                layoutParams.copyFrom(window.getAttributes());
+                layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT; // Đặt chiều rộng tối đa
+                layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT; // Chiều cao tự điều chỉnh
+                window.setAttributes(layoutParams);
+            }
+
+            dialog.show();
+        });
+
+        recyclerView.setAdapter(datPhongAdapter);
     }
 }
