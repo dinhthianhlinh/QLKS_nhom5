@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import androidx.annotation.NonNull;
+
 import com.example.quanlikhachsan_nhom5.database.Dbhelper;
 import com.example.quanlikhachsan_nhom5.model.NguoiDung;
 
@@ -64,7 +66,7 @@ public class NguoiDungDao {
 
 
     }
-    public boolean TaoTaikhoan(NguoiDung nguoiDung){
+    public boolean TaoTaikhoan(@NonNull NguoiDung nguoiDung){
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("tennd",nguoiDung.getTennd());

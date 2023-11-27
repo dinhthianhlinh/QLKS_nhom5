@@ -14,11 +14,13 @@
         android:layout_gravity="center"
         >
         <EditText
+            android:id="@+id/edtmess"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:hint="@string/ykien"
             />
         <Button
+            android:id="@+id/btnmess"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="Gửi"
@@ -26,6 +28,33 @@
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginTop="200dp"
+            android:layout_marginLeft="300dp"
+            android:backgroundTint="#005EFF"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@drawable/buton"
+        android:layout_gravity="center"
+        >
+        <EditText
+            android:id="@+id/edtcall"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:hint="nhập số điện thoại"
+            />
+        <Button
+            android:id="@+id/btncall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Gửi"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="100dp"
             android:layout_marginLeft="300dp"
             android:backgroundTint="#005EFF"
             />
