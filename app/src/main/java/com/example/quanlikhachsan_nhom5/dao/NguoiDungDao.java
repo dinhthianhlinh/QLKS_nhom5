@@ -86,21 +86,28 @@ public class NguoiDungDao {
     public ArrayList<NguoiDung> getAllData() {
         ArrayList<NguoiDung> list = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM NGUOIDUNG", null);
+
+        // Thêm điều kiện WHERE role = 2 vào truy vấn SQL
+        Cursor cursor = db.rawQuery("SELECT * FROM NGUOIDUNG WHERE role = 2", null);
+
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
+                String tennd = cursor.getString(1);
+                String sdt = cursor.getString(2);
+                String diachi = cursor.getString(3);
+                String tendn = cursor.getString(4);
+                String matkhau = cursor.getString(5);
 
-                String tennd = cursor.getString(0);
-                String sdt = cursor.getString(1);
-                String diachi = cursor.getString(2);
-                String tendn = cursor.getString(3);
-                String matkhau = cursor.getString(4);
-
-                 NguoiDung nd  = new NguoiDung( tennd, sdt, diachi, tendn, matkhau);
+                NguoiDung nd = new NguoiDung(tennd, sdt, diachi, tendn, matkhau);
                 list.add(nd);
             } while (cursor.moveToNext());
         }
+
+        // Đóng cursor
+        cursor.close();
+
         return list;
     }
+
 }
