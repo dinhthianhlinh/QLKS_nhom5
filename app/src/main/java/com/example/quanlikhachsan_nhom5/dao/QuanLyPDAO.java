@@ -49,6 +49,7 @@ public class QuanLyPDAO {
         ContentValues values = new ContentValues();
         values.put("SOPHONG", QLP.getSophongQLP());
         values.put("TEN_QLP", QLP.getTenQLP());
+        values.put("SOGIO_QLP", QLP.getSogioQLP());
         values.put("DONGIA_QLP", QLP.getDongiaQLP());
         values.put("DICHVUK_QLP", QLP.getDichvukhQLP());
         values.put("DATCOC_QLP", QLP.getDatcocQLP());
