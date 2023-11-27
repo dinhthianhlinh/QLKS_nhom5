@@ -40,11 +40,11 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        holder.txttaikhoan_DSTK.setText(list.get(position).getTennd());
-        holder.txtmatkhau_DSTK.setText(list.get(position).getTendn());
-        holder.txthoten_DSTK.setText(list.get(position).getSdt());
-        holder.txtsdt_DSTK.setText((list.get(position).getDiachi()));
-        holder.txtque_DSTK.setText(list.get(position).getMatkhau());
+        holder.txttaikhoan_DSTK.setText(list.get(position).getTendn());
+        holder.txtmatkhau_DSTK.setText(list.get(position).getMatkhau());
+        holder.txthoten_DSTK.setText(list.get(position).getTennd());
+        holder.txtsdt_DSTK.setText((list.get(position).getSdt()));
+        holder.txtque_DSTK.setText(list.get(position).getDiachi());
 
     }
 
