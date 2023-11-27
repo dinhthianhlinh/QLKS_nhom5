@@ -48,7 +48,7 @@ public class TaoTaiKhoan extends AppCompatActivity {
 
                     NguoiDung nguoiDung = new NguoiDung(tendk,phone,que,user,pass);
 
-                    boolean check = nguoiDungDao.dangkyTaikhoan(nguoiDung);
+                    boolean check = nguoiDungDao.TaoTaikhoan(nguoiDung);
                     if (check){
                         Toast.makeText(TaoTaiKhoan.this, "dang ki thanh cong", Toast.LENGTH_SHORT).show();
                         finish();

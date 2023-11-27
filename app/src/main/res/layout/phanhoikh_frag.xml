@@ -14,11 +14,13 @@
         android:layout_gravity="center"
         >
         <EditText
+            android:id="@+id/edtmess"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:hint="@string/ykien"
             />
         <Button
+            android:id="@+id/btnmess"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:text="Gửi"
