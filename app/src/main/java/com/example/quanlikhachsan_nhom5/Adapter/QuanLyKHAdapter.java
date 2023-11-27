@@ -42,14 +42,14 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        holder.txtsott.setText(String.valueOf(list.get(position).getId()));
-        holder.txtten.setText(list.get(position).getTenQLKH());
-        holder.txttuoi.setText(String.valueOf(list.get(position).getTuoiQLKH()));
-        holder.txtgioitinh.setText(list.get(position).getGioitinhQLKH());
-        holder.txtsodienthoai.setText(String.valueOf(list.get(position).getSodtQLKH()));
-        holder.txtquequan.setText(list.get(position).getQuequanQLKH());
-        holder.txtcancuoc.setText(String.valueOf(list.get(position).getCancuocQLKH()));
-        holder.txtlandatphong.setText(String.valueOf(list.get(position).getSolandatphongQLKH()));
+        holder.txtsott.setText("STT: " +String.valueOf(list.get(position).getId()));
+        holder.txtten.setText("Tên: "+list.get(position).getTenQLKH());
+        holder.txttuoi.setText("Tuổi: "+String.valueOf(list.get(position).getTuoiQLKH()));
+        holder.txtgioitinh.setText("Giới Tính: "+list.get(position).getGioitinhQLKH());
+        holder.txtsodienthoai.setText("SDT: "+String.valueOf(list.get(position).getSodtQLKH()));
+        holder.txtquequan.setText("Quê Quán: "+list.get(position).getQuequanQLKH());
+        holder.txtcancuoc.setText("Số CMND: "+String.valueOf(list.get(position).getCancuocQLKH()));
+        holder.txtlandatphong.setText("Số lần đặt phòng: "+String.valueOf(list.get(position).getSolandatphongQLKH()));
     }
 
     @Override

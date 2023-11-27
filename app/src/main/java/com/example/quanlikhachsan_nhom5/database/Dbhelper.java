@@ -127,6 +127,7 @@ public class Dbhelper extends SQLiteOpenHelper {
         if (i != i1){
             db.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
             db.execSQL("DROP TABLE IF EXISTS QLKH");
+            db.execSQL("DROP TABLE IF EXISTS QLP");
             db.execSQL("DROP TABLE IF EXISTS TANG1");
             db.execSQL("DROP TABLE IF EXISTS TANG2");
             db.execSQL("DROP TABLE IF EXISTS TANG3");
