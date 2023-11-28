@@ -22,10 +22,16 @@
 
     <!-- Time Slot Options -->
     <RadioGroup
+        android:id="@+id/radioGroup1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/radioButton1Hours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 giờ" />
 
         <!-- 2 hours option -->
         <RadioButton
@@ -61,6 +67,7 @@
     </RadioGroup>
 
     <RadioGroup
+        android:id="@+id/radioGroup2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
