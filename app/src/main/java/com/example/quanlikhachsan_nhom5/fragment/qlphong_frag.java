@@ -37,18 +37,6 @@ public class qlphong_frag extends Fragment {
         View view = inflater.inflate(R.layout.qlphong_frag,container,false);
 
 
-        rcqlp = view.findViewById(R.id.rcQLP);
-        quanLyPDAO = new QuanLyPDAO(requireContext()); // Sử dụng requireContext() thay vì this
-        list = quanLyPDAO.getAllData();
-
-        // Sử dụng requireContext() thay vì this
-        GridLayoutManager layout = new GridLayoutManager(requireContext(), 1);
-        rcqlp.setLayoutManager(layout);
-
-        // Sử dụng requireContext() thay vì this
-        quanLyPAdapter = new QuanLyPAdapter(requireContext(), list);
-        rcqlp.setAdapter(quanLyPAdapter);
-
         return view;
 
     }

@@ -4,65 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/loginsiu"
+    android:background="@drawable/grey"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Login">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
+        android:orientation="vertical">
 
-        android:orientation="vertical"
-        >
-    <EditText
-        android:id="@+id/edtUser"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="center"
-        android:paddingTop="50dp"
-        android:hint="@string/tentaikhoan"
-        />
-    <EditText
-        android:id="@+id/edtPass"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="center"
-        android:paddingTop="50dp"
-        android:hint="@string/matkhau"
-        />
+
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutuser"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+
+            android:hint="Username"
+            android:textColorHint="@color/white">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtUser"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:hint="Username"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white"
+            android:hint="Password"
+            android:textColorHint="@color/white">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <CheckBox
+            android:id="@+id/chkRememberPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="16dp"
+            android:text="Nhớ mật khẩu"
+            android:textColor="@color/white" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:paddingTop="50dp"
-        >
+        android:orientation="vertical"
+        android:paddingTop="50dp">
+
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="150dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:text="LOGIN"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:layout_gravity="center"
+
+
+            android:backgroundTint="@color/white"
             android:padding="10dp"
-            android:layout_gravity="center"/>
+            android:text="Đăng nhập"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnDangKi"
-            android:layout_width="150dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:text="sign up"
-            android:textColor="@android:color/white"
-            android:layout_marginLeft="20dp"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/white"
             android:padding="10dp"
-            android:layout_gravity="center"/>
+
+            android:text="Đăng ký"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

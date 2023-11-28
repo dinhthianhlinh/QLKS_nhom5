@@ -42,50 +42,56 @@
             android:paddingLeft="5dp">
 
             <TextView
-                android:id="@+id/txttenQLP"
+                android:id="@+id/txttenkhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 />
 
             <TextView
-                android:id="@+id/txtsogioQLP"
+                android:id="@+id/txtsodienthoaikhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="italic"
                 />
 
             <TextView
-                android:id="@+id/txtdongiaQLP"
+                android:id="@+id/txtemailkhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
             <TextView
-                android:id="@+id/txtdichvukhacQLP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                />
-            <TextView
-                android:id="@+id/txttongtienQLP"
+                android:id="@+id/txtsoluongnguoikhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 />
             <TextView
-                android:id="@+id/txtdatcocQLP"
+                android:id="@+id/txtcheckinkhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 />
             <TextView
-                android:id="@+id/txtkhachtraQLP"
+                android:id="@+id/txtcheckoutkhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 />
             <TextView
-                android:id="@+id/txtinhoadonQLP"
+                android:id="@+id/txttongtienkhnv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+            <TextView
+                android:id="@+id/txtsophongkhnv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
+            <TextView
+                android:id="@+id/txtthongtinthanhtoankhnv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 

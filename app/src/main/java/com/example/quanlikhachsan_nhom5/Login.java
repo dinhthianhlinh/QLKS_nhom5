@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.quanlikhachsan_nhom5.dao.NguoiDungDao;
@@ -40,6 +41,10 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String user = edtUser.getText().toString();
                 String pass = edtPass.getText().toString();
+
+
+
+
 
                 boolean  check = nguoiDungDao.KiemTraDangNhap(user,pass);
                 if (check){
