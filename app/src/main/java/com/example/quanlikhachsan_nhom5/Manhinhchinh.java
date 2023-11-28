@@ -30,12 +30,15 @@ import com.example.quanlikhachsan_nhom5.fragment.qlphong_frag;
 import com.example.quanlikhachsan_nhom5.fragment.qltang_frag;
 import com.example.quanlikhachsan_nhom5.fragment.qltk_frag;
 import com.example.quanlikhachsan_nhom5.fragment.thongke_frag;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.navigation.NavigationView;
 
 public class Manhinhchinh extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+    BottomNavigationView bottomNavigationView;
     ActionBarDrawerToggle drawerToggle;
 
 
@@ -48,6 +51,10 @@ public class Manhinhchinh extends AppCompatActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        bottomNavigationView = findViewById(id.navigationbottom);
+
 
         drawerLayout = findViewById(id.drawerlayout);
 
@@ -130,6 +137,24 @@ public class Manhinhchinh extends AppCompatActivity {
                 return false;
             }
         });
+        bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                if (item.getItemId() == id.chat) {
+                    startActivity(new Intent(Manhinhchinh.this, Login.class));
+
+                } else if (item.getItemId() == id.map) {
+                    startActivity(new Intent(Manhinhchinh.this,Manhinhchinh.class));
+
+                } else {
+                    startActivity(new Intent(Manhinhchinh.this, ThongTinCaNhan.class));
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                setTitle(item.getTitle());
+            }
+        });
+
         SharedPreferences sharedPreferences = getSharedPreferences("dataUser", MODE_PRIVATE);
         int role = sharedPreferences.getInt("role", -1);
         switch (role) {

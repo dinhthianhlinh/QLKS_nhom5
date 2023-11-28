@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/baseline_keyboard_arrow_left_24"
+        android:iconTint="@color/black"
+        android:title="home"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/map"
+        android:icon="@drawable/baseline_home_24"
+        android:iconTint="@color/black"
+        android:title="home"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/taikhoan"
+        android:icon="@drawable/baseline_assignment_ind_24"
+        android:iconTint="@color/black"
+        android:title="home"
+        app:showAsAction="ifRoom"/>
+
+
+</menu>

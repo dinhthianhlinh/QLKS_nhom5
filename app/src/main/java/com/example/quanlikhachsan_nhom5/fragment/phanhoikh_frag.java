@@ -1,6 +1,7 @@
 package com.example.quanlikhachsan_nhom5.fragment;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
