@@ -2,7 +2,7 @@ package com.example.quanlikhachsan_nhom5.model;
 
 public class NguoiDung {
     private int mand;
-    private String tennd, sdt, diachi, tendn, matkhau;
+    private String tennd, sdt, diachi, tendn, matkhau, linkAvata;
     private int role;
 
     public NguoiDung() {
@@ -18,6 +18,15 @@ public class NguoiDung {
         this.role = role;
     }
 
+    public NguoiDung(String tennd, String sdt, String diachi, String tendn, String matkhau,String linkAvata) {
+        this.tennd = tennd;
+        this.sdt = sdt;
+        this.diachi = diachi;
+        this.tendn = tendn;
+        this.matkhau = matkhau;
+        this.linkAvata = linkAvata;
+    }
+
     public NguoiDung(String tennd, String sdt, String diachi, String tendn, String matkhau) {
         this.tennd = tennd;
         this.sdt = sdt;
@@ -25,7 +34,6 @@ public class NguoiDung {
         this.tendn = tendn;
         this.matkhau = matkhau;
     }
-
 
 
     public int getMand() {
@@ -82,5 +90,13 @@ public class NguoiDung {
 
     public void setRole(int role) {
         this.role = role;
+    }
+
+    public String getLinkAvata() {
+        return linkAvata;
+    }
+
+    public void setLinkAvata(String linkAvata) {
+        this.linkAvata = linkAvata;
     }
 }

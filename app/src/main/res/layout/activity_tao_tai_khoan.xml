@@ -55,6 +55,13 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:hint="@string/que"/>
+
+    <EditText
+        android:id="@+id/linkAvata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="Nhập link ảnh"/>
     <Button
         android:id="@+id/tbtndk"
         android:layout_width="wrap_content"

@@ -39,7 +39,7 @@ public class NguoiDungDao {
         if (cursor.getCount()>0){
             cursor.moveToFirst();
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("role",cursor.getInt(6));
+            editor.putInt("role",cursor.getInt(7));
             editor.apply();
         }
 
@@ -74,6 +74,7 @@ public class NguoiDungDao {
         contentValues.put("diachi",nguoiDung.getDiachi());
         contentValues.put("tendn",nguoiDung.getTendn());
         contentValues.put("matkhau",nguoiDung.getMatkhau());
+        contentValues.put("linkAvata",nguoiDung.getLinkAvata());
         contentValues.put("role",2);
 
 
@@ -98,8 +99,9 @@ public class NguoiDungDao {
                 String diachi = cursor.getString(3);
                 String tendn = cursor.getString(4);
                 String matkhau = cursor.getString(5);
+                String linkAvata = cursor.getString(6);
 
-                NguoiDung nd = new NguoiDung(tennd, sdt, diachi, tendn, matkhau);
+                NguoiDung nd = new NguoiDung(tennd, sdt, diachi, tendn, matkhau, linkAvata);
                 list.add(nd);
             } while (cursor.moveToNext());
         }
