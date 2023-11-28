@@ -26,6 +26,7 @@ public class TaoTaiKhoan extends AppCompatActivity {
         EditText Phone = findViewById(R.id.tsdtdk);
 
         EditText Que = findViewById(R.id.tdiatri);
+        EditText linkAvata = findViewById(R.id.linkAvata);
 
         Button btnDK = findViewById(R.id.tbtndk);
         nguoiDungDao = new NguoiDungDao(this);
@@ -43,10 +44,10 @@ public class TaoTaiKhoan extends AppCompatActivity {
                     String user = User.getText().toString();
                     String tendk = Tendk.getText().toString();
                     String phone = Phone.getText().toString();
-
                     String que = Que.getText().toString();
+                    String linkAVT = linkAvata.getText().toString();
 
-                    NguoiDung nguoiDung = new NguoiDung(tendk,phone,que,user,pass);
+                    NguoiDung nguoiDung = new NguoiDung(tendk,phone,que,user,pass, linkAVT);
 
                     boolean check = nguoiDungDao.TaoTaikhoan(nguoiDung);
                     if (check){
