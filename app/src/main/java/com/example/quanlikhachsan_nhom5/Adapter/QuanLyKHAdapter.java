@@ -61,8 +61,6 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
     public static class viewholder extends RecyclerView.ViewHolder {
         TextView txtsott, txtten, txttuoi, txtgioitinh, txtsodienthoai,txtquequan,txtcancuoc,txtlandatphong;
 
-
-
         public viewholder(@NonNull View itemView) {
             super(itemView);
             txtsott = itemView.findViewById(R.id.txtsott);
