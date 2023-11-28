@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 public class NguoiDungDao {
 
     private Dbhelper dbHelper;
+    SQLiteDatabase db;
 
 
     SharedPreferences sharedPreferences;
@@ -84,6 +86,35 @@ public class NguoiDungDao {
 
 
     }
+    public boolean CapNhatThongTin(NguoiDung nguoiDung) {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tennd", nguoiDung.getTennd());
+        contentValues.put("sdt", nguoiDung.getSdt());
+        contentValues.put("diachi", nguoiDung.getDiachi());
+        contentValues.put("tendn", nguoiDung.getTendn());
+        contentValues.put("matkhau", nguoiDung.getMatkhau());
+        contentValues.put("linkAvata", nguoiDung.getLinkAvata());
+        contentValues.put("role",2);
+
+        int result = sqLiteDatabase.update(
+                "NGUOIDUNG",
+                contentValues,
+                "mand=?",
+                new String[]{String.valueOf(nguoiDung.getMand())}
+        );
+
+        // Kiểm tra xem có bản ghi nào được cập nhật không
+        return result > 0;
+
+    }
+    public int Delete(int id) {
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        return sqLiteDatabase.delete("NGUOIDUNG", "mand=?", new String[]{String.valueOf(id)});
+    }
+
+
     public ArrayList<NguoiDung> getAllData() {
         ArrayList<NguoiDung> list = new ArrayList<>();
         SQLiteDatabase db = dbHelper.getWritableDatabase();
