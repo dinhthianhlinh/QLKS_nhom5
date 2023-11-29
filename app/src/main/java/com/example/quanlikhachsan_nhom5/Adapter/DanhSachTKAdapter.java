@@ -124,7 +124,7 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
             @Override
             public void onClick(DialogInterface dialog, int i) {
                 nguoiDungDao = new NguoiDungDao(context);
-                nguoiDungDao.Delete(nd.getMand());
+                nguoiDungDao.Delete(nd);
                 list.remove(nd);
                 notifyDataSetChanged();
             }
