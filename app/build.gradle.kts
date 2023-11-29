@@ -38,6 +38,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation ("com.squareup.picasso:picasso:2.71828")
     implementation ("com.google.android.material:material:1.4.0")
+    implementation ("com.google.android.exoplayer:exoplayer:2.15.1")
+
 
 
 }

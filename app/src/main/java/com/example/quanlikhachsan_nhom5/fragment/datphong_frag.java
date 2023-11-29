@@ -1,6 +1,7 @@
 package com.example.quanlikhachsan_nhom5.fragment;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -44,6 +45,55 @@ public class datphong_frag extends AppCompatActivity {
             Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialog_qlp);
             EditText editTextRoomNumber = dialog.findViewById(R.id.editTextRoomNumber);
+
+            EditText edtName = dialog.findViewById(R.id.edtName);
+            EditText editTextPhone = dialog.findViewById(R.id.editTextPhone);
+            EditText editTextEmail = dialog.findViewById(R.id.editTextEmail);
+            EditText editTextNumPeople = dialog.findViewById(R.id.editTextNumPeople);
+            TextView tvCheckIn = dialog.findViewById(R.id.tvCheckIn);
+            TextView tvCheckOut = dialog.findViewById(R.id.tvCheckOut);
+            TextView Sotienphaitra = dialog.findViewById(R.id.Sotienphaitra);
+            RadioGroup radioGroupPayment = dialog.findViewById(R.id.radioGroupPayment);
+            Button btnBook = dialog.findViewById(R.id.btnBook);
+
+            editTextRoomNumber.setText(datPhong.getSophong());
+
+            // Khi người dùng nhấn nút btnBook
+            btnBook.setOnClickListener(v -> {
+                // Lấy dữ liệu từ các trường nhập
+                String name = edtName.getText().toString();
+                String phone = editTextPhone.getText().toString();
+                String email = editTextEmail.getText().toString();
+                String numPeople = editTextNumPeople.getText().toString();
+                String checkIn = tvCheckIn.getText().toString();
+                String checkOut = tvCheckOut.getText().toString();
+                String totalAmount = Sotienphaitra.getText().toString();
+
+                // Xác định thông tin thanh toán
+                String paymentInfo = "";
+                int selectedPaymentMethod = radioGroupPayment.getCheckedRadioButtonId();
+                if (selectedPaymentMethod == R.id.radioDirectPayment) {
+                    paymentInfo = "thanh toán khi đến nơi";
+                } else if (selectedPaymentMethod == R.id.radioOnlinePayment) {
+                    paymentInfo = "bạn thanh toán thành công";
+                }
+
+                // Gửi dữ liệu sang qlphong_frag
+                Intent intent = new Intent(datphong_frag.this, qlphong_frag.class);
+                intent.putExtra("NAME", name);
+                intent.putExtra("PHONE", phone);
+                intent.putExtra("EMAIL", email);
+                intent.putExtra("NUM_PEOPLE", numPeople);
+                intent.putExtra("CHECK_IN", checkIn);
+                intent.putExtra("CHECK_OUT", checkOut);
+                intent.putExtra("TOTAL_AMOUNT", totalAmount);
+                intent.putExtra("PAYMENT_INFO", paymentInfo);
+
+                startActivity(intent);
+            });
+
+
+
             editTextRoomNumber.setText(datPhong.getSophong());
 
             Button chooseTimeButton = dialog.findViewById(R.id.choosetime);

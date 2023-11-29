@@ -82,13 +82,10 @@ public class Manhinhchinh extends AppCompatActivity {
 
                 } else if (item.getItemId() == id.qlphong) {
                     toolbar.setTitle("QUẢN LÍ PHÒNG");
-                    Fragment fragment= new qlphong_frag();
-                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
-
+                    startActivity(new Intent(Manhinhchinh.this, qlphong_frag.class));
                 } else if (item.getItemId() == id.qlphong) {
                     toolbar.setTitle("QUẢN LÍ PHÒNG");
-                    Fragment fragment= new qlphong_frag();
-                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
+                    startActivity(new Intent(Manhinhchinh.this, qlphong_frag.class));
 
                 } else if (item.getItemId() == id.qlttang) {
                     toolbar.setTitle("QUẢN LÍ TẦNG");
