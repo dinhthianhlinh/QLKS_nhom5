@@ -1,14 +1,16 @@
 package com.example.quanlikhachsan_nhom5.fragment;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,7 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.quanlikhachsan_nhom5.Adapter.DatPhongAdapter;
 import com.example.quanlikhachsan_nhom5.R;
 import com.example.quanlikhachsan_nhom5.dao.DatPhongDao;
+import com.example.quanlikhachsan_nhom5.dao.QuanLyPDAO;
 import com.example.quanlikhachsan_nhom5.model.DatPhong;
+import com.example.quanlikhachsan_nhom5.model.QuanLyP;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,10 +45,11 @@ public class datphong_frag extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         datPhongAdapter = new DatPhongAdapter(this, list);
 
+
         datPhongAdapter.setOnItemClickedListener(datPhong -> {
             Dialog dialog = new Dialog(this);
             dialog.setContentView(R.layout.dialog_qlp);
-            EditText editTextRoomNumber = dialog.findViewById(R.id.editTextRoomNumber);
+
 
             EditText edtName = dialog.findViewById(R.id.edtName);
             EditText editTextPhone = dialog.findViewById(R.id.editTextPhone);
@@ -53,6 +58,7 @@ public class datphong_frag extends AppCompatActivity {
             TextView tvCheckIn = dialog.findViewById(R.id.tvCheckIn);
             TextView tvCheckOut = dialog.findViewById(R.id.tvCheckOut);
             TextView Sotienphaitra = dialog.findViewById(R.id.Sotienphaitra);
+            EditText editTextRoomNumber = dialog.findViewById(R.id.editTextRoomNumber);
             RadioGroup radioGroupPayment = dialog.findViewById(R.id.radioGroupPayment);
             Button btnBook = dialog.findViewById(R.id.btnBook);
 
@@ -60,6 +66,8 @@ public class datphong_frag extends AppCompatActivity {
 
             // Khi người dùng nhấn nút btnBook
             btnBook.setOnClickListener(v -> {
+
+
                 // Lấy dữ liệu từ các trường nhập
                 String name = edtName.getText().toString();
                 String phone = editTextPhone.getText().toString();
@@ -68,6 +76,8 @@ public class datphong_frag extends AppCompatActivity {
                 String checkIn = tvCheckIn.getText().toString();
                 String checkOut = tvCheckOut.getText().toString();
                 String totalAmount = Sotienphaitra.getText().toString();
+                String roomNumber = editTextRoomNumber.getText().toString();
+
 
                 // Xác định thông tin thanh toán
                 String paymentInfo = "";
@@ -77,21 +87,15 @@ public class datphong_frag extends AppCompatActivity {
                 } else if (selectedPaymentMethod == R.id.radioOnlinePayment) {
                     paymentInfo = "bạn thanh toán thành công";
                 }
+                QuanLyP quanLyP = new QuanLyP(name, phone, email, numPeople, checkIn, checkOut, totalAmount, roomNumber, paymentInfo);
+                QuanLyPDAO dao = new QuanLyPDAO(datphong_frag.this);
+                dao.addQuanLyP(quanLyP);
+                Toast.makeText(datphong_frag.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
 
                 // Gửi dữ liệu sang qlphong_frag
-                Intent intent = new Intent(datphong_frag.this, qlphong_frag.class);
-                intent.putExtra("NAME", name);
-                intent.putExtra("PHONE", phone);
-                intent.putExtra("EMAIL", email);
-                intent.putExtra("NUM_PEOPLE", numPeople);
-                intent.putExtra("CHECK_IN", checkIn);
-                intent.putExtra("CHECK_OUT", checkOut);
-                intent.putExtra("TOTAL_AMOUNT", totalAmount);
-                intent.putExtra("PAYMENT_INFO", paymentInfo);
 
-                startActivity(intent);
+                dialog.dismiss();
             });
-
 
 
             editTextRoomNumber.setText(datPhong.getSophong());
@@ -113,6 +117,8 @@ public class datphong_frag extends AppCompatActivity {
 
         recyclerView.setAdapter(datPhongAdapter);
     }
+
+
 
     private void openDialogNgayGio(Dialog parentDialog, String giaphong) {
         Dialog dialogNgayGio = new Dialog(this);

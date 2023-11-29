@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quanlikhachsan_nhom5.R;
 import com.example.quanlikhachsan_nhom5.dao.NguoiDungDao;
-import com.example.quanlikhachsan_nhom5.dao.QuanLyPDAO;
+
 import com.example.quanlikhachsan_nhom5.model.NguoiDung;
 import com.example.quanlikhachsan_nhom5.model.QuanLyP;
 import com.squareup.picasso.Picasso;
@@ -49,6 +49,9 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
+
+
+
         Picasso.get()
                 .load(list.get(position).getLinkAvata())
 //                .placeholder(R.drawable.placeholder) // (Tùy chọn) Ảnh placeholder trong khi đang tải

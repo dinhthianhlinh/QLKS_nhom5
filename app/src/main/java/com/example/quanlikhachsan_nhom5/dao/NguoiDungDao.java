@@ -90,16 +90,15 @@ public class NguoiDungDao {
     }
 
     public boolean CapNhatThongTin(NguoiDung nguoiDung) {
-//        int userRole = sharedPreferences.getInt("role", 7);
-//        // Kiểm tra role
-//        if (userRole != 3) { // nhung thang user khong phai admin
-//            // Không có quyền cập nhật thông tin
-//            return false;
-//        }
+        int userRole = sharedPreferences.getInt("role", 7);
+        // Kiểm tra role
+        if (userRole != 3) { // nhung thang user khong phai admin
+            // Không có quyền cập nhật thông tin
+            return false;
+        }
 
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("mand", nguoiDung.getMand());
         contentValues.put("tennd", nguoiDung.getTennd());
         contentValues.put("sdt", nguoiDung.getSdt());
         contentValues.put("diachi", nguoiDung.getDiachi());
