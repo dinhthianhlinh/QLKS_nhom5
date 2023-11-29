@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class NguoiDungDao {
 
     private Dbhelper dbHelper;
-    SQLiteDatabase db;
+
 
 
     SharedPreferences sharedPreferences;
@@ -90,15 +90,16 @@ public class NguoiDungDao {
     }
 
     public boolean CapNhatThongTin(NguoiDung nguoiDung) {
-        int userRole = sharedPreferences.getInt("role", 0);
-        // Kiểm tra role
-        if (userRole != 2) {
-            // Không có quyền cập nhật thông tin
-            return false;
-        }
+//        int userRole = sharedPreferences.getInt("role", 7);
+//        // Kiểm tra role
+//        if (userRole != 3) { // nhung thang user khong phai admin
+//            // Không có quyền cập nhật thông tin
+//            return false;
+//        }
 
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("mand", nguoiDung.getMand());
         contentValues.put("tennd", nguoiDung.getTennd());
         contentValues.put("sdt", nguoiDung.getSdt());
         contentValues.put("diachi", nguoiDung.getDiachi());
@@ -119,17 +120,17 @@ public class NguoiDungDao {
         return result > 0;
     }
 
-    public int Delete(int id) {
-        int userRole = sharedPreferences.getInt("role", 0);
-        // Kiểm tra role
-        if (userRole != 2) {
-            // Không có quyền xóa
-            return -1;
-        }
+    public int Delete(NguoiDung nd) {
+//        int userRole = sharedPreferences.getInt("role", 0);
+//        // Kiểm tra role
+//        if (userRole != 2) {
+//            // Không có quyền xóa
+//            return -1;
+//        }
 
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
 
-        return sqLiteDatabase.delete("NGUOIDUNG", "mand=?", new String[]{String.valueOf(id)});
+        return sqLiteDatabase.delete("NGUOIDUNG", "mand=?", new String[]{nd.getMand()+""});
 
 
     }
@@ -140,20 +141,20 @@ public class NguoiDungDao {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         // Thêm điều kiện WHERE role = 2 vào truy vấn SQL
-        Cursor cursor = db.rawQuery("SELECT * FROM NGUOIDUNG WHERE role = 2", null);
+        Cursor cursor = db.rawQuery("SELECT * FROM NGUOIDUNG WHERE role =2", null);
 
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
-                String tennd = cursor.getString(1);
-                String sdt = cursor.getString(2);
-                String diachi = cursor.getString(3);
-                String tendn = cursor.getString(4);
-                String matkhau = cursor.getString(5);
-                String linkAvata = cursor.getString(6);
-
-                NguoiDung nd = new NguoiDung(tennd, sdt, diachi, tendn, matkhau, linkAvata);
-                list.add(nd);
+                NguoiDung nguoiDung = new NguoiDung();
+                nguoiDung.setMand(cursor.getInt(0));
+                nguoiDung.setTennd(cursor.getString(1));
+                nguoiDung.setSdt(cursor.getString(2));
+                nguoiDung.setDiachi(cursor.getString(3));
+                nguoiDung.setTendn(cursor.getString(4));
+                nguoiDung.setMatkhau(cursor.getString(5));
+                nguoiDung.setLinkAvata(cursor.getString(6));
+                list.add(nguoiDung);
             } while (cursor.moveToNext());
         }
 

@@ -41,6 +41,7 @@ public class TaoTaiKhoan extends AppCompatActivity {
                     Toast.makeText(TaoTaiKhoan.this, "mật khâu không chùng nhau", Toast.LENGTH_SHORT).show();
 
                 }else {
+
                     String user = User.getText().toString();
                     String tendk = Tendk.getText().toString();
                     String phone = Phone.getText().toString();

@@ -23,7 +23,12 @@
             android:gravity="center"
             android:orientation="vertical"
             android:layout_marginLeft="5dp">
-
+            <TextView
+                android:id="@+id/txtmandtk_DSTK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                />
             <TextView
                 android:id="@+id/txttentk_DSTK"
                 android:layout_width="match_parent"
