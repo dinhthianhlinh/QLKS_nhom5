@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper(Context context) {
-        super(context, "QLKS", null, 37);
+        super(context, "QLKS", null, 39);
     }
 
     @Override
@@ -118,10 +118,23 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO QLKH VALUES (1,'dinhlinh',19,'nam',0971222222,'hà nam',12345, 2)" );
 
 
-        String quanlyphong = "CREATE TABLE QLP (SOPHONG integer primary key, TEN_QLP text,SOGIO_QLP integer, DONGIA_QLP integer, DICHVUK_QLP integer,  DATCOC_QLP integer," +
-                " INHOAD_QLP text)";
-        db.execSQL(quanlyphong);
-        db.execSQL("INSERT INTO QLP VALUES (101,'dinhlinh',6,800000,50000,300000,'In hóa đơn thành công')");
+        String createTableQLP = "CREATE TABLE QLP (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "name TEXT, " +
+                "phone TEXT, " +
+                "email TEXT, " +
+                "numPeople TEXT, " +
+                "checkIn TEXT, " +
+                "checkOut TEXT, " +
+                "totalPrice TEXT, " +
+                "roomNumber TEXT, " +
+                "paymentInfo TEXT" +
+                ")";
+        db.execSQL(createTableQLP);
+
+        // Thêm dữ liệu mẫu vào bảng QLP
+        db.execSQL("INSERT INTO QLP (name, phone, email, numPeople, checkIn, checkOut, totalPrice, roomNumber, paymentInfo) VALUES ('Nguyen Van A', '0123456789', 'nguyenvana@example.com', '2', '01/01/2023 14:00', '03/01/2023 12:00', '2000000', '101', 'Thanh toán khi đến nơi')");
+        db.execSQL("INSERT INTO QLP (name, phone, email, numPeople, checkIn, checkOut, totalPrice, roomNumber, paymentInfo) VALUES ('Tran Thi B', '0987654321', 'tranthib@example.com', '1', '05/01/2023 10:00', '07/01/2023 09:00', '1500000', '102', 'Bạn đã thanh toán thành công')");
 
 
 
