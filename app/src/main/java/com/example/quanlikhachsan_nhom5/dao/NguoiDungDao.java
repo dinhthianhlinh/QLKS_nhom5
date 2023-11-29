@@ -22,73 +22,56 @@ public class NguoiDungDao {
 
     SharedPreferences sharedPreferences;
 
-    public  NguoiDungDao(Context context){
+    public NguoiDungDao(Context context) {
         dbHelper = new Dbhelper(context);
-        sharedPreferences = context.getSharedPreferences("dataUser",Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("dataUser", Context.MODE_PRIVATE);
 
 
     }
+
     //kiem tra dang nhap
     //neu co gia trij dung ==>true
     // nguoc lai ==>false
-    public boolean KiemTraDangNhap(String usrename , String password){
+    public boolean KiemTraDangNhap(String usrename, String password) {
         SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM NGUOIDUNG WHERE tendn = ? AND matkhau = ?", new  String[]{usrename,password});
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM NGUOIDUNG WHERE tendn = ? AND matkhau = ?", new String[]{usrename, password});
 
         /*  if (cursor.getCount()>0)
             return true;
         else return false;*/
-        if (cursor.getCount()>0){
+        if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("role",cursor.getInt(7));
+            editor.putInt("role", cursor.getInt(7));
             editor.apply();
         }
 
-        return cursor.getCount() >0;
+        return cursor.getCount() > 0;
 
 
     }
 
     //dk
-    public boolean dangkyTaikhoan(NguoiDung nguoiDung){
+    public boolean dangkyTaikhoan(NguoiDung nguoiDung) {
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("tennd",nguoiDung.getTennd());
-        contentValues.put("sdt",nguoiDung.getSdt());
-        contentValues.put("diachi",nguoiDung.getDiachi());
-        contentValues.put("tendn",nguoiDung.getTendn());
-        contentValues.put("matkhau",nguoiDung.getMatkhau());
-        contentValues.put("role",1);
+        contentValues.put("tennd", nguoiDung.getTennd());
+        contentValues.put("sdt", nguoiDung.getSdt());
+        contentValues.put("diachi", nguoiDung.getDiachi());
+        contentValues.put("tendn", nguoiDung.getTendn());
+        contentValues.put("matkhau", nguoiDung.getMatkhau());
+        contentValues.put("role", 1);
 
 
-        long check = sqLiteDatabase.insert("NGUOIDUNG",null,contentValues);
+        long check = sqLiteDatabase.insert("NGUOIDUNG", null, contentValues);
 
         return check != -1;
 
 
     }
-    public boolean TaoTaikhoan(@NonNull NguoiDung nguoiDung){
+
+    public boolean TaoTaikhoan(@NonNull NguoiDung nguoiDung) {
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("tennd",nguoiDung.getTennd());
-        contentValues.put("sdt",nguoiDung.getSdt());
-        contentValues.put("diachi",nguoiDung.getDiachi());
-        contentValues.put("tendn",nguoiDung.getTendn());
-        contentValues.put("matkhau",nguoiDung.getMatkhau());
-        contentValues.put("linkAvata",nguoiDung.getLinkAvata());
-        contentValues.put("role",2);
-
-
-        long check = sqLiteDatabase.insert("NGUOIDUNG",null,contentValues);
-
-        return check != -1;
-
-
-    }
-    public boolean CapNhatThongTin(NguoiDung nguoiDung) {
-        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
-
         ContentValues contentValues = new ContentValues();
         contentValues.put("tennd", nguoiDung.getTennd());
         contentValues.put("sdt", nguoiDung.getSdt());
@@ -96,7 +79,33 @@ public class NguoiDungDao {
         contentValues.put("tendn", nguoiDung.getTendn());
         contentValues.put("matkhau", nguoiDung.getMatkhau());
         contentValues.put("linkAvata", nguoiDung.getLinkAvata());
-        contentValues.put("role",2);
+        contentValues.put("role", 2);
+
+
+        long check = sqLiteDatabase.insert("NGUOIDUNG", null, contentValues);
+
+        return check != -1;
+
+
+    }
+
+    public boolean CapNhatThongTin(NguoiDung nguoiDung) {
+        int userRole = sharedPreferences.getInt("role", 0);
+        // Kiểm tra role
+        if (userRole != 2) {
+            // Không có quyền cập nhật thông tin
+            return false;
+        }
+
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tennd", nguoiDung.getTennd());
+        contentValues.put("sdt", nguoiDung.getSdt());
+        contentValues.put("diachi", nguoiDung.getDiachi());
+        contentValues.put("tendn", nguoiDung.getTendn());
+        contentValues.put("matkhau", nguoiDung.getMatkhau());
+        contentValues.put("linkAvata", nguoiDung.getLinkAvata());
+        contentValues.put("role", 2);
 
         int result = sqLiteDatabase.update(
                 "NGUOIDUNG",
@@ -105,13 +114,24 @@ public class NguoiDungDao {
                 new String[]{String.valueOf(nguoiDung.getMand())}
         );
 
+
         // Kiểm tra xem có bản ghi nào được cập nhật không
         return result > 0;
-
     }
+
     public int Delete(int id) {
+        int userRole = sharedPreferences.getInt("role", 0);
+        // Kiểm tra role
+        if (userRole != 2) {
+            // Không có quyền xóa
+            return -1;
+        }
+
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
         return sqLiteDatabase.delete("NGUOIDUNG", "mand=?", new String[]{String.valueOf(id)});
+
+
     }
 
 

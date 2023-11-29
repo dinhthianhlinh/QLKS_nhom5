@@ -61,10 +61,6 @@ public class DatPhongAdapter extends RecyclerView.Adapter<DatPhongAdapter.ViewHo
                 listener.onItemClicked(list.get(position));
             }
         });
-
-
-
-
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.quanlikhachsan_nhom5.Adapter;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,7 +48,7 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewholder holder,int position) {
+    public void onBindViewHolder(@NonNull viewholder holder, int position) {
         Picasso.get()
                 .load(list.get(position).getLinkAvata())
 //                .placeholder(R.drawable.placeholder) // (Tùy chọn) Ảnh placeholder trong khi đang tải
@@ -63,7 +65,9 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
             public void onClick(View view) {
                 NguoiDung nd = list.get(position);
                 delete(nd);
+
             }
+
         });
 
         holder.btnUpdate_DSTK.setOnClickListener(new View.OnClickListener() {
@@ -76,73 +80,6 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
 
     }
 
-    public void delete(NguoiDung nd) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Delete");
-        builder.setMessage("Do you want to delete");
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-
-            }
-        });
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int i) {
-                nguoiDungDao = new NguoiDungDao(context);
-                nguoiDungDao.Delete(nd.getMand());
-                list.remove(nd);
-                notifyDataSetChanged();
-            }
-        });
-        builder.show();
-    }
-
-    public void update(NguoiDung nd) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        AlertDialog alertDialog = builder.create();
-        View view = View.inflate(context, R.layout.itemupdate_dstk, null);
-        alertDialog.setView(view);
-
-        EditText edtaikhoan = view.findViewById(R.id.taikhoanUpdate_DSTK);
-        EditText edmatkhau = view.findViewById(R.id.matkhauUpdate_DSTK);
-        EditText edhoten = view.findViewById(R.id.hotenUpdate_DSTK);
-        EditText edsdt = view.findViewById(R.id.sdtUpdate_DSTK);
-        EditText edque = view.findViewById(R.id.queUpdate_DSTK);
-        EditText edlinkAvata = view.findViewById(R.id.linkAvataUpdate_DSTK);
-
-
-        edtaikhoan.setText(nd.getTendn().toString());
-        edmatkhau.setText(nd.getMatkhau().toString());
-        edhoten.setText(nd.getTennd().toString());
-        edsdt.setText(nd.getSdt().toString());
-        edque.setText(nd.getDiachi().toString());
-        edlinkAvata.setText(nd.getLinkAvata().toString());
-        Button btnupdate = view.findViewById(R.id.btnSua_DSTK);
-
-
-
-        btnupdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nd.setTendn(edtaikhoan.getText().toString());
-                nd.setMatkhau(edmatkhau.getText().toString());
-                nd.setTennd(edhoten.getText().toString());
-                nd.setSdt(edsdt.getText().toString());
-                nd.setDiachi(edque.getText().toString());
-                nd.setLinkAvata(edlinkAvata.getText().toString());
-
-                nguoiDungDao = new NguoiDungDao(context);
-                nguoiDungDao.CapNhatThongTin(nd);
-
-                notifyDataSetChanged();
-                alertDialog.dismiss();
-
-            }
-        });
-
-        alertDialog.show();
-    }
 
     @Override
     public int getItemCount() {
@@ -169,5 +106,70 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
             btnDelete_DSTK = itemView.findViewById(R.id.btnDelete_DSTK);
             btnUpdate_DSTK = itemView.findViewById(R.id.btnUpdate_DSTK);
         }
+    }
+    public void delete(NguoiDung nd) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Delete");
+        builder.setMessage("Do you want to delete");
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+
+            }
+        });
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                nguoiDungDao = new NguoiDungDao(context);
+                nguoiDungDao.Delete(nd.getMand());
+                list.remove(nd);
+                notifyDataSetChanged();
+            }
+        });
+        builder.show();
+
+    }
+
+    public void update(NguoiDung nd) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        AlertDialog alertDialog = builder.create();
+        View view = View.inflate(context, R.layout.itemupdate_dstk, null);
+        alertDialog.setView(view);
+
+        EditText edtaikhoan = view.findViewById(R.id.taikhoanUpdate_DSTK);
+        EditText edmatkhau = view.findViewById(R.id.matkhauUpdate_DSTK);
+        EditText edhoten = view.findViewById(R.id.hotenUpdate_DSTK);
+        EditText edsdt = view.findViewById(R.id.sdtUpdate_DSTK);
+        EditText edque = view.findViewById(R.id.queUpdate_DSTK);
+        EditText edlinkAvata = view.findViewById(R.id.linkAvataUpdate_DSTK);
+
+        edtaikhoan.setText(nd.getTendn().toString());
+        edmatkhau.setText(nd.getMatkhau().toString());
+        edhoten.setText(nd.getTennd().toString());
+        edsdt.setText(nd.getSdt().toString());
+        edque.setText(nd.getDiachi().toString());
+        edlinkAvata.setText(nd.getLinkAvata().toString());
+        Button btnupdate = view.findViewById(R.id.btnSua_DSTK);
+
+
+        btnupdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nd.setTendn(edtaikhoan.getText().toString());
+                nd.setMatkhau(edmatkhau.getText().toString());
+                nd.setTennd(edhoten.getText().toString());
+                nd.setSdt(edsdt.getText().toString());
+                nd.setDiachi(edque.getText().toString());
+                nd.setLinkAvata(edlinkAvata.getText().toString());
+
+                nguoiDungDao = new NguoiDungDao(context);
+                nguoiDungDao.CapNhatThongTin(nd);
+                notifyDataSetChanged();
+                alertDialog.dismiss();
+
+            }
+        });
+
+        alertDialog.show();
     }
 }

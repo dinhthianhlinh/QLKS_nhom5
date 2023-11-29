@@ -35,7 +35,7 @@
     <LinearLayout
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:orientation="vertical"
         android:background="@drawable/buton"
         android:layout_gravity="center"
@@ -50,11 +50,11 @@
             android:id="@+id/btncall"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="Gửi"
+            android:text="GỌI"
             android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="300dp"
             android:backgroundTint="#005EFF"
             />

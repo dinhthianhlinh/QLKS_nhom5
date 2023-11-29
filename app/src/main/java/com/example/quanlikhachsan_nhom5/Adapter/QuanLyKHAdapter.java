@@ -18,7 +18,7 @@ import com.example.quanlikhachsan_nhom5.model.QuanLyKH;
 
 import java.util.ArrayList;
 
-public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewholder>{
+public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewholder> {
 
     private final Context context;
     private final ArrayList<QuanLyKH> list;
@@ -30,8 +30,6 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
         quanLyKHDAO = new QuanLyKHDAO(context);
     }
 
-
-
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -42,14 +40,14 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        holder.txtsott.setText("STT: " +String.valueOf(list.get(position).getId()));
-        holder.txtten.setText("Tên: "+list.get(position).getTenQLKH());
-        holder.txttuoi.setText("Tuổi: "+String.valueOf(list.get(position).getTuoiQLKH()));
-        holder.txtgioitinh.setText("Giới Tính: "+list.get(position).getGioitinhQLKH());
-        holder.txtsodienthoai.setText("SDT: "+String.valueOf(list.get(position).getSodtQLKH()));
-        holder.txtquequan.setText("Quê Quán: "+list.get(position).getQuequanQLKH());
-        holder.txtcancuoc.setText("Số CMND: "+String.valueOf(list.get(position).getCancuocQLKH()));
-        holder.txtlandatphong.setText("Số lần đặt phòng: "+String.valueOf(list.get(position).getSolandatphongQLKH()));
+        holder.txtsott.setText("STT: " + String.valueOf(list.get(position).getId()));
+        holder.txtten.setText("Tên: " + list.get(position).getTenQLKH());
+        holder.txttuoi.setText("Tuổi: " + String.valueOf(list.get(position).getTuoiQLKH()));
+        holder.txtgioitinh.setText("Giới Tính: " + list.get(position).getGioitinhQLKH());
+        holder.txtsodienthoai.setText("SDT: " + String.valueOf(list.get(position).getSodtQLKH()));
+        holder.txtquequan.setText("Quê Quán: " + list.get(position).getQuequanQLKH());
+        holder.txtcancuoc.setText("Số CMND: " + String.valueOf(list.get(position).getCancuocQLKH()));
+        holder.txtlandatphong.setText("Số lần đặt phòng: " + String.valueOf(list.get(position).getSolandatphongQLKH()));
     }
 
     @Override
@@ -58,8 +56,9 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
             return list.size();
         return 0;
     }
+
     public static class viewholder extends RecyclerView.ViewHolder {
-        TextView txtsott, txtten, txttuoi, txtgioitinh, txtsodienthoai,txtquequan,txtcancuoc,txtlandatphong;
+        TextView txtsott, txtten, txttuoi, txtgioitinh, txtsodienthoai, txtquequan, txtcancuoc, txtlandatphong;
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
@@ -74,6 +73,6 @@ public class QuanLyKHAdapter extends RecyclerView.Adapter<QuanLyKHAdapter.viewho
 
 
         }
-}
+    }
 
 }

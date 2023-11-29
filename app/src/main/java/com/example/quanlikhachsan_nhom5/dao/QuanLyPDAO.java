@@ -13,4 +13,7 @@ import java.util.ArrayList;
 
 public class QuanLyPDAO {
 
+
+    public QuanLyPDAO(Context context) {
+    }
 }
