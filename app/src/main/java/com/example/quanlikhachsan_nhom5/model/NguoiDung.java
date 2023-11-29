@@ -8,17 +8,7 @@ public class NguoiDung {
     public NguoiDung() {
     }
 
-    public NguoiDung(int mand, String tennd, String sdt, String diachi, String tendn, String matkhau, int role) {
-        this.mand = mand;
-        this.tennd = tennd;
-        this.sdt = sdt;
-        this.diachi = diachi;
-        this.tendn = tendn;
-        this.matkhau = matkhau;
-        this.role = role;
-    }
-
-    public NguoiDung(String tennd, String sdt, String diachi, String tendn, String matkhau,String linkAvata) {
+    public NguoiDung(String tennd, String sdt, String diachi, String tendn, String matkhau, String linkAvata) {
         this.tennd = tennd;
         this.sdt = sdt;
         this.diachi = diachi;
@@ -35,6 +25,26 @@ public class NguoiDung {
         this.matkhau = matkhau;
     }
 
+    public NguoiDung(int mand, String tennd, String sdt, String diachi, String tendn, String matkhau, String linkAvata, int role) {
+        this.mand = mand;
+        this.tennd = tennd;
+        this.sdt = sdt;
+        this.diachi = diachi;
+        this.tendn = tendn;
+        this.matkhau = matkhau;
+        this.linkAvata = linkAvata;
+        this.role = role;
+    }
+
+    public NguoiDung(int mand, String tennd, String sdt, String diachi, String tendn, String matkhau, String linkAvata) {
+        this.mand = mand;
+        this.tennd = tennd;
+        this.sdt = sdt;
+        this.diachi = diachi;
+        this.tendn = tendn;
+        this.matkhau = matkhau;
+        this.linkAvata = linkAvata;
+    }
 
     public int getMand() {
         return mand;
