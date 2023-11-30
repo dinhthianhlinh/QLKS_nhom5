@@ -69,8 +69,7 @@ public class Tang4Adapter extends RecyclerView.Adapter<Tang4Adapter.ViewHolder>{
             sptang = itemView.findViewById(R.id.sotangtang4);
             giaphong = itemView.findViewById(R.id.giaphongtang4);
             hangphong = itemView.findViewById(R.id.hangphongtamg4);
-            xoatang4 = itemView.findViewById(R.id.xoatang4);
-            updatetang4 = itemView.findViewById(R.id.updatetang4);
+
 
 
 

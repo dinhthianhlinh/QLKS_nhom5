@@ -4,9 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+android:background="@drawable/node10"
     android:orientation="vertical"
     tools:context=".TaoTaiKhoan">
+
+
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -18,56 +22,125 @@
         android:textSize="50dp"
         android:gravity="center"
         />
-    <EditText
-        android:id="@+id/taikhoanUpdate_DSTK"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/tentaikhoan"/>
-    <EditText
-        android:id="@+id/matkhauUpdate_DSTK"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/matkhau"/>
 
-    <EditText
-        android:id="@+id/hotenUpdate_DSTK"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutuser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/tendangki"/>
-    <EditText
-        android:id="@+id/sdtUpdate_DSTK"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/sdt"/>
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
 
-    <EditText
-        android:id="@+id/queUpdate_DSTK"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/que"/>
+        android:hint="Username"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/taikhoanUpdate_DSTK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Username"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/linkAvataUpdate_DSTK"
-        android:layout_width="match_parent"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutpass"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Nhập link ảnh"/>
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Mật khẩu"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/matkhauUpdate_DSTK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/matkhau"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutdangky"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="tên đăng ký"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/hotenUpdate_DSTK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="tên đăng ký"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutsdtttt"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Số điện thoại "
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sdtUpdate_DSTK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Số điện thoại "/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutquequan"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Quê Quán "
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/queUpdate_DSTK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Quê Quán"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutlink"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Nhập link ảnh "
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/linkAvataUpdate_DSTK"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Nhập link ảnh"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
     <Button
         android:id="@+id/btnSua_DSTK"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="UPDATE"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textColor="@color/white"
         android:textStyle="italic"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:backgroundTint="#95BD3F3F"
+        android:backgroundTint="@color/black"
         />
 
 

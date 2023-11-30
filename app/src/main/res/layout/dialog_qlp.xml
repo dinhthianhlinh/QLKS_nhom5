@@ -1,46 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/edtName"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutuser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Tên" />
+        android:layout_gravity="center"
 
-    <EditText
-        android:id="@+id/editTextPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="Số điện thoại" />
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
+        android:hint="USERNAME"
+
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="USERNAME"
+          />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutSDTTT"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Email" />
+        android:layout_gravity="center"
+
+
+        android:hint="Số điện thoại"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="Số điện thoại" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutemail"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+
+        android:hint="Email"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutpeople"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+
+        android:hint="Số Lượng người"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextNumPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số Lượng người" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
 
 
 
     <!-- Sử dụng DatePicker để chọn ngày trả phòng -->
 
-    <EditText
-        android:id="@+id/editTextNumPeople"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Số lượng người" />
+
 
     <Button
         android:id="@+id/choosetime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chọn thời gian"
+        android:backgroundTint="@color/black"
 
         />
     <TextView
@@ -56,26 +106,53 @@
         android:id="@+id/tvCheckOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="thời điểm tra" />
-    <TextView
-        android:layout_marginTop="50dp"
+        android:text="thời điểm tra"
+
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+        android:layout_marginTop="30dp"
         android:id="@+id/Sotienphaitra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Số tiền phải trả" />
+        android:text="Số tiền phải trả "
+        android:textSize="20dp"
+        android:layout_marginBottom="30dp"/>
+        <TextView
+            android:layout_marginTop="30dp"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  VND"
+            android:textSize="20dp"
+            android:layout_marginBottom="30dp"/>
+    ></LinearLayout>
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutroom"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
 
+        android:hint="Số Phòng"
+        android:textColorHint="@color/black">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextRoomNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số Phòng" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 
     <!-- Hiển thị số phòng cho tầng vừa chọn -->
-    <EditText
-        android:id="@+id/editTextRoomNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nhập số phòng" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -108,6 +185,7 @@
         android:id="@+id/btnBook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
         android:text="Đặt Phòng" />
 
 

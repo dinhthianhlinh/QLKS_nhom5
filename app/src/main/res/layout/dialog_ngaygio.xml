@@ -106,9 +106,10 @@
     <!-- Apply Button -->
     <Button
         android:id="@+id/applyButton"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Áp dụng"
+        android:backgroundTint="@color/black"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"/>
 

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center|top"
     android:orientation="vertical"
-    android:background="#2AFAD8D8"
+    android:background="@drawable/node6"
     >
     <LinearLayout
         android:id="@+id/lineartaotaikhoan"
@@ -17,13 +17,15 @@
         <ImageView
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_gravity="center"
+            android:paddingEnd="30dp"
+            android:layout_marginEnd="30dp"
             android:src="@drawable/user"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:gravity="left"
             android:text="TẠO TÀI KHOẢN"
             android:textSize="25dp"/>
     </LinearLayout>
