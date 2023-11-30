@@ -4,79 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login"
+
     android:orientation="vertical"
     tools:context=".TaoTaiKhoan">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+
         android:gravity="center"
         android:text="TAO TAI KHOẢN"
         android:textColor="@color/black"
-        android:textSize="50dp"
+        android:textSize="22dp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/tuserdk"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutuser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/tentaikhoan" />
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
 
-    <EditText
-        android:id="@+id/tpassdk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/matkhau" />
+        android:hint="Username"
+        android:textColorHint="@color/black">
 
-    <EditText
-        android:id="@+id/tpassnhaplai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/nhaplaipass" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tuserdk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Username"
+            android:textColor="@color/black"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/ttendk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/tendangki" />
 
-    <EditText
-        android:id="@+id/tsdtdk"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutPass"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/sdt" />
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
 
-    <EditText
-        android:id="@+id/tdiatri"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/que" />
+        android:hint="Password"
+        android:textColorHint="@color/black">
 
-    <EditText
-        android:id="@+id/linkAvata"
-        android:layout_width="match_parent"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tpassdk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutEnter"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Nhập link ảnh" />
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Enter the Password"
+        android:textColorHint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tpassnhaplai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Enter the Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutregist"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Registration name"
+        android:textColorHint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ttendk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Registration name" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutHotline"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Hotline"
+        android:textColorHint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tsdtdk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Hotline" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutADress"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Address"
+        android:textColorHint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/tdiatri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Address" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutALinh"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+
+        android:hint="Link image"
+        android:textColorHint="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+
+            android:id="@+id/linkAvata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="Link image" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
 
     <Button
         android:id="@+id/tbtndk"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:backgroundTint="#95BD3F3F"
-        android:text="Dang kí"
+        android:backgroundTint="@color/black"
+        android:text="Regist"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:textStyle="italic" />
 
 
