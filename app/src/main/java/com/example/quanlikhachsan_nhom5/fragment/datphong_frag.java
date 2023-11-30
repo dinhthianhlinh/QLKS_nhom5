@@ -97,7 +97,7 @@ public class datphong_frag extends Fragment {
                 QuanLyP quanLyP = new QuanLyP(name, phone, email, numPeople, checkIn, checkOut, totalAmount, roomNumber, paymentInfo);
                 QuanLyPDAO dao = new QuanLyPDAO(datphong_frag.this.getContext());
                 dao.addQuanLyP(quanLyP);
-                Toast.makeText(datphong_frag.this.getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(datphong_frag.this.getContext(), "Dặt phòng thành công", Toast.LENGTH_SHORT).show();
 
                 // Gửi dữ liệu sang qlphong_frag
 

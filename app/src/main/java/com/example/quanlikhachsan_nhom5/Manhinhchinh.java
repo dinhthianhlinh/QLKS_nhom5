@@ -42,7 +42,7 @@ public class Manhinhchinh extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    BottomNavigationView bottomNavigationView;
+
     ActionBarDrawerToggle drawerToggle;
 
 
@@ -59,7 +59,7 @@ public class Manhinhchinh extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        bottomNavigationView = findViewById(id.navigationbottom);
+
 
 
         drawerLayout = findViewById(id.drawerlayout);
@@ -140,23 +140,7 @@ public class Manhinhchinh extends AppCompatActivity {
                 return false;
             }
         });
-        bottomNavigationView.setOnItemReselectedListener(new NavigationBarView.OnItemReselectedListener() {
-            @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                if (item.getItemId() == id.chat) {
-                    startActivity(new Intent(Manhinhchinh.this, Login.class));
 
-                } else if (item.getItemId() == id.map) {
-                    startActivity(new Intent(Manhinhchinh.this, Manhinhchinh.class));
-
-                } else {
-                    startActivity(new Intent(Manhinhchinh.this, ThongTinCaNhan.class));
-                }
-                drawerLayout.closeDrawer(GravityCompat.START);
-                setTitle(item.getTitle());
-            }
-        });
 
         SharedPreferences sharedPreferences = getSharedPreferences("dataUser", MODE_PRIVATE);
         int role = sharedPreferences.getInt("role", -1);
@@ -173,6 +157,7 @@ public class Manhinhchinh extends AppCompatActivity {
                 menu.findItem(id.checkin).setVisible(false);
                 menu.findItem(id.checkout).setVisible(false);
                 menu.findItem(id.qlphong).setVisible(false);
+                menu.findItem(id.dichvuphong).setVisible(false);
                 break;
             case 2:
                 Menu menu2 = navigationView.getMenu();
