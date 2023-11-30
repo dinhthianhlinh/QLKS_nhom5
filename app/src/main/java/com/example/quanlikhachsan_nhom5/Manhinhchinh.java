@@ -3,6 +3,7 @@ package com.example.quanlikhachsan_nhom5;
 import static com.example.quanlikhachsan_nhom5.R.*;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,8 +15,11 @@ import androidx.fragment.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.quanlikhachsan_nhom5.fragment.QuanLiPhanHoi;
 import com.example.quanlikhachsan_nhom5.fragment.baocao_frag;
@@ -82,10 +86,8 @@ public class Manhinhchinh extends AppCompatActivity {
 
                 } else if (item.getItemId() == id.qlphong) {
                     toolbar.setTitle("QUẢN LÍ PHÒNG");
-                    startActivity(new Intent(Manhinhchinh.this, qlphong_frag.class));
-                } else if (item.getItemId() == id.qlphong) {
-                    toolbar.setTitle("QUẢN LÍ PHÒNG");
-                    startActivity(new Intent(Manhinhchinh.this, qlphong_frag.class));
+                    Fragment fragment = new qlphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.qlttang) {
                     toolbar.setTitle("QUẢN LÍ TẦNG");
@@ -101,14 +103,17 @@ public class Manhinhchinh extends AppCompatActivity {
                     fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
                 } else if (item.getItemId() == id.dichvuphong) {
                     toolbar.setTitle("DỊCH VỤ PHÒNG");
-                    startActivity(new Intent(Manhinhchinh.this, dichvuphong_frag.class));
+                    Fragment fragment= new dichvuphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
                 } else if (item.getItemId() == id.datphong) {
                     toolbar.setTitle("ĐẶT PHÒNG");
-                    startActivity(new Intent(Manhinhchinh.this, datphong_frag.class));
+                    Fragment fragment= new datphong_frag();
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.phanhoikh) {
                     toolbar.setTitle("PHẢN HỒI CỦA KHÁCH HÀNG");
-                    startActivity(new Intent(Manhinhchinh.this, phanhoikh_frag.class));
+                    Fragment fragment= new phanhoikh_frag() ;
+                    fragmentManager.beginTransaction().replace(id.fragmentlayout, fragment).commit();
 
                 } else if (item.getItemId() == id.phanhoinv) {
                     toolbar.setTitle("PHẢN HỒI CỦA NHÂN VIÊN");
@@ -183,8 +188,11 @@ public class Manhinhchinh extends AppCompatActivity {
                 menu3.findItem(id.dichvuphong).setVisible(false);
                 menu3.findItem(id.phanhoinv).setVisible(false);
                 menu3.findItem(id.phanhoikh).setVisible(false);
+                menu3.findItem(id.qlttang).setVisible(false);
+                menu3.findItem(id.datphong).setVisible(false);
+                menu3.findItem(id.checkout).setVisible(false);
+                menu3.findItem(id.checkin).setVisible(false);
                 break;
-
             default:
                 Menu menu4 = navigationView.getMenu();
                 menu4.findItem(id.qltk).setVisible(false);

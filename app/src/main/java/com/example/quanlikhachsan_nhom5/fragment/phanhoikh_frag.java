@@ -18,17 +18,19 @@ import androidx.fragment.app.Fragment;
 
 import com.example.quanlikhachsan_nhom5.R;
 
-public class phanhoikh_frag extends AppCompatActivity {
+public class phanhoikh_frag extends Fragment {
     EditText edtmass, edtcall;
     Button btnmass, btncall;
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.phanhoikh_frag);
-        btnmass = findViewById(R.id.btnmess);
-        edtmass = findViewById(R.id.edtmess);
-        btncall = findViewById(R.id.btncall);
-        edtcall = findViewById(R.id.edtcall);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.phanhoikh_frag,container,false);
+
+        btnmass = view.findViewById(R.id.btnmess);
+        edtmass = view.findViewById(R.id.edtmess);
+        btncall = view.findViewById(R.id.btncall);
+        edtcall = view.findViewById(R.id.edtcall);
 
         btnmass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,15 +46,16 @@ public class phanhoikh_frag extends AppCompatActivity {
                 Intent callintent = new Intent(Intent.ACTION_CALL,
                         Uri.parse("tel:"+edtcall.getText().toString()));
 // Yêu cầu người dùng đồng ý quyền truy cập vào tính năng gọi điện
-                if (ActivityCompat.checkSelfPermission(phanhoikh_frag.this,
+                if (ActivityCompat.checkSelfPermission(phanhoikh_frag.this.getContext(),
                         android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(phanhoikh_frag.this, new
+                    ActivityCompat.requestPermissions(phanhoikh_frag.this.getActivity(), new
                             String[]{android.Manifest.permission.CALL_PHONE},1);
                     return;
                 }
                 startActivity(callintent);
             }
         });
+        return view;
 
     }
 

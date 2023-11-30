@@ -3,6 +3,9 @@ package com.example.quanlikhachsan_nhom5.fragment;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -11,8 +14,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,26 +33,29 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class datphong_frag extends AppCompatActivity {
+public class datphong_frag extends Fragment {
     private DatPhongAdapter datPhongAdapter;
     private DatPhongDao datPhongDao;
     private ArrayList<DatPhong> list;
 
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.datphong_frag);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        RecyclerView recyclerView = findViewById(R.id.Rcvdp);
-        datPhongDao = new DatPhongDao(this);
+        View view = inflater.inflate(R.layout.datphong_frag,container,false);
+
+
+
+        RecyclerView recyclerView = view.findViewById(R.id.Rcvdp);
+        datPhongDao = new DatPhongDao(this.getContext());
         list = datPhongDao.getDSDatPhong();
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        datPhongAdapter = new DatPhongAdapter(this, list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
+        datPhongAdapter = new DatPhongAdapter(this.getContext(), list);
 
 
         datPhongAdapter.setOnItemClickedListener(datPhong -> {
-            Dialog dialog = new Dialog(this);
+            Dialog dialog = new Dialog(this.getContext());
             dialog.setContentView(R.layout.dialog_qlp);
 
 
@@ -88,9 +96,9 @@ public class datphong_frag extends AppCompatActivity {
                     paymentInfo = "bạn thanh toán thành công";
                 }
                 QuanLyP quanLyP = new QuanLyP(name, phone, email, numPeople, checkIn, checkOut, totalAmount, roomNumber, paymentInfo);
-                QuanLyPDAO dao = new QuanLyPDAO(datphong_frag.this);
+                QuanLyPDAO dao = new QuanLyPDAO(datphong_frag.this.getContext());
                 dao.addQuanLyP(quanLyP);
-                Toast.makeText(datphong_frag.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(datphong_frag.this.getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
 
                 // Gửi dữ liệu sang qlphong_frag
 
@@ -116,12 +124,16 @@ public class datphong_frag extends AppCompatActivity {
         });
 
         recyclerView.setAdapter(datPhongAdapter);
+
+
+
+        return view;
     }
 
 
 
     private void openDialogNgayGio(Dialog parentDialog, String giaphong) {
-        Dialog dialogNgayGio = new Dialog(this);
+        Dialog dialogNgayGio = new Dialog(this.getContext());
         dialogNgayGio.setContentView(R.layout.dialog_ngaygio);
 
         // Cài đặt kích thước cho dialog

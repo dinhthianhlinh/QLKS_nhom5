@@ -5,12 +5,8 @@
     <item android:title="QUẢN LÍ PHÒNG" android:id="@+id/qlphong"/>
     <item android:title="QUẢN LÍ TẨNG" android:id="@+id/qlttang"/>
 
-    <item android:title="thong ke">
-        <menu>
             <item android:title="thongke" android:id="@+id/thongke"/>
             <item android:title="Báo cáo" android:id="@+id/baocao"/>
-        </menu>
-    </item>
     <item android:title="check-in" android:id="@+id/checkin"/>
     <item android:title="chech-out" android:id="@+id/checkout"/>
     <item android:title="ĐĂT PHÒNG" android:id="@+id/datphong"/>
