@@ -33,7 +33,6 @@ public class DatPhongDao {
                     giaPhongValue = 0; // Trường hợp lỗi, đặt giá trị mặc định
                     e.printStackTrace();
                 }
-
                 list.add(new DatPhong(cursor.getInt(0), cursor.getString(1), cursor.getString(2), String.valueOf(giaPhongValue), cursor.getString(4)));
             } while (cursor.moveToNext());
         }
