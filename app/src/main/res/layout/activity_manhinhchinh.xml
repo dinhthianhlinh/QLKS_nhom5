@@ -28,19 +28,6 @@
             android:layout_weight="1"
             android:background="@drawable/red" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigationbottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_margin="16dp"
-            android:background="@drawable/buttomnagi"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            app:itemIconTint="@color/black"
-            app:itemTextColor="@color/black"
-            app:labelVisibilityMode="selected"
-            app:menu="@menu/menubutom" />
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView

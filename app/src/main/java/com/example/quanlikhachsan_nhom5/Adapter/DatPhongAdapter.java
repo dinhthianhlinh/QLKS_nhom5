@@ -61,6 +61,8 @@ public class DatPhongAdapter extends RecyclerView.Adapter<DatPhongAdapter.ViewHo
                 listener.onItemClicked(list.get(position));
             }
         });
+
+
     }
 
     @Override
@@ -78,6 +80,17 @@ public class DatPhongAdapter extends RecyclerView.Adapter<DatPhongAdapter.ViewHo
             sptang = itemView.findViewById(R.id.txtsotang);
             giaphong = itemView.findViewById(R.id.txtgiaphong);
             hangphong = itemView.findViewById(R.id.txthangphong);
+        }
+    }
+    public int getDatPhongPosition(DatPhong datPhong) {
+        return list.indexOf(datPhong);
+    }
+
+    // Thêm phương thức removeDatPhong
+    public void removeDatPhong(int position) {
+        if (position >= 0 && position < list.size()) {
+            list.remove(position);
+            notifyItemRemoved(position);
         }
     }
 }

@@ -10,6 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,11 +39,17 @@ public class datphong_frag extends Fragment {
     private DatPhongDao datPhongDao;
     private ArrayList<DatPhong> list;
 
+
+
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.datphong_frag, container, false);
+
+
 
 
         RecyclerView recyclerView = view.findViewById(R.id.Rcvdp);
@@ -53,9 +60,12 @@ public class datphong_frag extends Fragment {
         datPhongAdapter = new DatPhongAdapter(this.getContext(), list);
 
 
+
+
         datPhongAdapter.setOnItemClickedListener(datPhong -> {
             Dialog dialog = new Dialog(this.getContext());
             dialog.setContentView(R.layout.dialog_qlp);
+
 
 
             EditText edtName = dialog.findViewById(R.id.edtName);
@@ -69,10 +79,17 @@ public class datphong_frag extends Fragment {
             RadioGroup radioGroupPayment = dialog.findViewById(R.id.radioGroupPayment);
             Button btnBook = dialog.findViewById(R.id.btnBook);
 
+
             editTextRoomNumber.setText(datPhong.getSophong());
+
+
+
+
+            // Đóng dialog
 
             // Khi người dùng nhấn nút btnBook
             btnBook.setOnClickListener(v -> {
+
 
 
                 // Lấy dữ liệu từ các trường nhập
@@ -86,6 +103,15 @@ public class datphong_frag extends Fragment {
                 String roomNumber = editTextRoomNumber.getText().toString();
 
 
+                int position = datPhongAdapter.getDatPhongPosition(datPhong);
+
+                // Xóa mục này khỏi danh sách
+                datPhongAdapter.removeDatPhong(position);
+
+                // Cập nhật RecyclerView để hiển thị danh sách mới
+                datPhongAdapter.notifyDataSetChanged();
+
+
                 // Xác định thông tin thanh toán
                 String paymentInfo = "";
                 int selectedPaymentMethod = radioGroupPayment.getCheckedRadioButtonId();
@@ -93,11 +119,12 @@ public class datphong_frag extends Fragment {
                     paymentInfo = "thanh toán khi đến nơi";
                 } else if (selectedPaymentMethod == R.id.radioOnlinePayment) {
                     paymentInfo = "bạn thanh toán thành công";
+
                 }
                 QuanLyP quanLyP = new QuanLyP(name, phone, email, numPeople, checkIn, checkOut, totalAmount, roomNumber, paymentInfo);
                 QuanLyPDAO dao = new QuanLyPDAO(datphong_frag.this.getContext());
                 dao.addQuanLyP(quanLyP);
-                Toast.makeText(datphong_frag.this.getContext(), "Thêm thành công", Toast.LENGTH_SHORT).show();
+                Toast.makeText(datphong_frag.this.getContext(), "Dặt phòng thành công", Toast.LENGTH_SHORT).show();
 
                 // Gửi dữ liệu sang qlphong_frag
 
