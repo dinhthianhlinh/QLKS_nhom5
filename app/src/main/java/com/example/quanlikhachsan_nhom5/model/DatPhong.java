@@ -2,7 +2,7 @@ package com.example.quanlikhachsan_nhom5.model;
 
 public class DatPhong {
     private int id;
-    private String sophong , sotang, giaphong, hangphong;
+    private String sophong, sotang, giaphong, hangphong;
 
     public DatPhong(int id, String sophong, String sotang, String giaphong, String hangphong) {
         this.id = id;

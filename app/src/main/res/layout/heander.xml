@@ -2,28 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="210dp"
-    android:orientation="vertical"
-    android:background="@drawable/node3">
+    android:background="@drawable/node3"
+    android:orientation="vertical">
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:src="@drawable/noel"/>
+        android:src="@drawable/noel" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:layout_marginLeft="20dp"
         android:text="hotline"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="HLD Hotel xin chào quý khách "
-        android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        android:textColor="@color/white"/>
+        android:text="HLD Hotel xin chào quý khách "
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

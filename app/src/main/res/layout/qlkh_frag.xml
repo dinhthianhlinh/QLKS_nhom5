@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcqlKH"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_adđ"
@@ -18,8 +18,8 @@
         android:layout_margin="30dp"
         android:backgroundTint="#3F51B5"
         android:src="@drawable/baseline_add_24"
-        app:layout_anchorGravity="bottom|right|end"
-        app:layout_anchor="@id/rcqlKH">
+        app:layout_anchor="@id/rcqlKH"
+        app:layout_anchorGravity="bottom|right|end">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

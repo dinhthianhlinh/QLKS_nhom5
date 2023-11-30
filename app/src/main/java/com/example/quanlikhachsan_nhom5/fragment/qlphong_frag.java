@@ -30,7 +30,7 @@ public class qlphong_frag extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_qlphong_frag,container,false);
+        View view = inflater.inflate(R.layout.activity_qlphong_frag, container, false);
 
         quanLyPList = new ArrayList<>();
         setupRecyclerView(view);

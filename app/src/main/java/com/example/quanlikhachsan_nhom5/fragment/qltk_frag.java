@@ -22,7 +22,7 @@ public class qltk_frag extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_qltk_frag,container,false);
+        View view = inflater.inflate(R.layout.activity_qltk_frag, container, false);
 
 
         LinearLayout lineartaotaikhoan = view.findViewById(R.id.lineartaotaikhoan);
@@ -33,7 +33,7 @@ public class qltk_frag extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getContext(), TaoTaiKhoan.class);
+                Intent intent = new Intent(getContext(), TaoTaiKhoan.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +41,7 @@ public class qltk_frag extends Fragment {
 
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getContext(), DanhSachtk.class);
+                Intent intent = new Intent(getContext(), DanhSachtk.class);
                 startActivity(intent);
             }
         });

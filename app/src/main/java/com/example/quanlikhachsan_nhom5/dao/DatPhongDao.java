@@ -3,22 +3,24 @@ package com.example.quanlikhachsan_nhom5.dao;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
 import com.example.quanlikhachsan_nhom5.database.Dbhelper;
 import com.example.quanlikhachsan_nhom5.model.DatPhong;
+
 import java.util.ArrayList;
 
 public class DatPhongDao {
     public Dbhelper dbhelper;
 
-    public DatPhongDao(Context context){
+    public DatPhongDao(Context context) {
         dbhelper = new Dbhelper(context);
     }
 
-    public ArrayList<DatPhong> getDSDatPhong(){
+    public ArrayList<DatPhong> getDSDatPhong() {
         ArrayList<DatPhong> list = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = dbhelper.getReadableDatabase();
         Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM DATPHONG", null);
-        if (cursor.getCount() > 0){
+        if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
                 // Làm sạch chuỗi giá phòng

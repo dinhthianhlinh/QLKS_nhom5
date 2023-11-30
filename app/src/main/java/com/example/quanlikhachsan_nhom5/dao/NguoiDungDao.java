@@ -19,7 +19,6 @@ public class NguoiDungDao {
     private Dbhelper dbHelper;
 
 
-
     SharedPreferences sharedPreferences;
 
     public NguoiDungDao(Context context) {
@@ -129,7 +128,7 @@ public class NguoiDungDao {
 
         SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
 
-        return sqLiteDatabase.delete("NGUOIDUNG", "mand=?", new String[]{nd.getMand()+""});
+        return sqLiteDatabase.delete("NGUOIDUNG", "mand=?", new String[]{nd.getMand() + ""});
 
 
     }

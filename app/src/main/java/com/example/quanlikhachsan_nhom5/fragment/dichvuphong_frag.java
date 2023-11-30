@@ -23,11 +23,11 @@ public class dichvuphong_frag extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.dichvuphong_frag,container,false);
+        View view = inflater.inflate(R.layout.dichvuphong_frag, container, false);
 
 
         LinearLayout lineardda = view.findViewById(R.id.dichvudoan);
-        LinearLayout linearbaothuc =  view.findViewById(R.id.dichvubaothuc);
+        LinearLayout linearbaothuc = view.findViewById(R.id.dichvubaothuc);
         LinearLayout lineargiatdo = view.findViewById(R.id.dichvudatui);
 
         lineardda.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +48,7 @@ public class dichvuphong_frag extends Fragment {
                 startActivity(new Intent(dichvuphong_frag.this.getContext(), GiatUi.class));
             }
         });
-    return view;
+        return view;
 
     }
 

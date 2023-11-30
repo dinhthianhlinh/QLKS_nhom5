@@ -39,14 +39,14 @@ public class QuanLyKHDAO {
                 int solandp = cursor.getInt(7);
 
 
-                QuanLyKH qlkh = new QuanLyKH(stt , ten, tuoi,gioit, sdt, quequan,cancuoc,solandp);
+                QuanLyKH qlkh = new QuanLyKH(stt, ten, tuoi, gioit, sdt, quequan, cancuoc, solandp);
                 list.add(qlkh);
             } while (cursor.moveToNext());
         }
         return list;
     }
 
-    public long insertKH(QuanLyKH QL){
+    public long insertKH(QuanLyKH QL) {
         ContentValues values = new ContentValues();
         values.put("STT", QL.getId());
         values.put("TEN", QL.getTenQLKH());

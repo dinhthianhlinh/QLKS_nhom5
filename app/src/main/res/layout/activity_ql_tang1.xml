@@ -10,13 +10,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTang1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigationbottom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
         android:background="@drawable/buttomnagi"
@@ -24,9 +24,7 @@
         android:paddingBottom="5dp"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"
-        android:layout_alignParentBottom="true"
         app:labelVisibilityMode="selected"
-        app:menu="@menu/menubutom"
-        />
+        app:menu="@menu/menubutom" />
 
 </RelativeLayout>

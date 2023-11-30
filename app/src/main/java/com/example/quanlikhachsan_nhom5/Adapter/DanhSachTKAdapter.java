@@ -51,7 +51,6 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
 
 
-
         Picasso.get()
                 .load(list.get(position).getLinkAvata())
 //                .placeholder(R.drawable.placeholder) // (Tùy chọn) Ảnh placeholder trong khi đang tải
@@ -110,6 +109,7 @@ public class DanhSachTKAdapter extends RecyclerView.Adapter<DanhSachTKAdapter.vi
             btnUpdate_DSTK = itemView.findViewById(R.id.btnUpdate_DSTK);
         }
     }
+
     public void delete(NguoiDung nd) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Delete");

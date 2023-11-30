@@ -7,12 +7,10 @@
     tools:context=".fragment.qlphong_frag">
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerqlp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="match_parent" />
 
 
 </RelativeLayout>

@@ -36,23 +36,23 @@ public class Register extends AppCompatActivity {
 
                 String pass = Pass.getText().toString();
                 String passnl = Passnl.getText().toString();
-                if (!pass.equals(passnl)){
+                if (!pass.equals(passnl)) {
                     Toast.makeText(Register.this, "mật khâu không chùng nhau", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
                     String user = User.getText().toString();
                     String tendk = Tendk.getText().toString();
                     String phone = Phone.getText().toString();
 
                     String que = Que.getText().toString();
 
-                    NguoiDung nguoiDung = new NguoiDung(tendk,phone,que,user,pass);
+                    NguoiDung nguoiDung = new NguoiDung(tendk, phone, que, user, pass);
 
                     boolean check = nguoiDungDao.dangkyTaikhoan(nguoiDung);
-                    if (check){
+                    if (check) {
                         Toast.makeText(Register.this, "dang ki thanh cong", Toast.LENGTH_SHORT).show();
                         finish();
-                    }else {
+                    } else {
                         Toast.makeText(Register.this, "dang ki that bai", Toast.LENGTH_SHORT).show();
                     }
 

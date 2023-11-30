@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import com.example.quanlikhachsan_nhom5.R;
 import com.example.quanlikhachsan_nhom5.tang.QlTang1;
 import com.example.quanlikhachsan_nhom5.tang.Tang2;
@@ -36,7 +38,8 @@ public class qltang_frag extends Fragment {
 
                 // Kiểm tra và gọi startActivity chỉ nếu activity QlTang1 tồn tại
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);}
+                    startActivity(intent);
+                }
 
             }
         });
@@ -48,7 +51,8 @@ public class qltang_frag extends Fragment {
 
                 // Kiểm tra và gọi startActivity chỉ nếu activity QlTang1 tồn tại
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);}
+                    startActivity(intent);
+                }
             }
         });
 
@@ -59,7 +63,8 @@ public class qltang_frag extends Fragment {
 
                 // Kiểm tra và gọi startActivity chỉ nếu activity QlTang1 tồn tại
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);}
+                    startActivity(intent);
+                }
             }
         });
 
@@ -70,7 +75,8 @@ public class qltang_frag extends Fragment {
 
                 // Kiểm tra và gọi startActivity chỉ nếu activity QlTang1 tồn tại
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
-                    startActivity(intent);}
+                    startActivity(intent);
+                }
             }
         });
 

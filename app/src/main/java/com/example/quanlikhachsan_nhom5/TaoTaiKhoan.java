@@ -37,10 +37,10 @@ public class TaoTaiKhoan extends AppCompatActivity {
 
                 String pass = Pass.getText().toString();
                 String passnl = Passnl.getText().toString();
-                if (!pass.equals(passnl)){
+                if (!pass.equals(passnl)) {
                     Toast.makeText(TaoTaiKhoan.this, "mật khâu không chùng nhau", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
                     String user = User.getText().toString();
                     String tendk = Tendk.getText().toString();
@@ -48,13 +48,13 @@ public class TaoTaiKhoan extends AppCompatActivity {
                     String que = Que.getText().toString();
                     String linkAVT = linkAvata.getText().toString();
 
-                    NguoiDung nguoiDung = new NguoiDung(tendk,phone,que,user,pass, linkAVT);
+                    NguoiDung nguoiDung = new NguoiDung(tendk, phone, que, user, pass, linkAVT);
 
                     boolean check = nguoiDungDao.TaoTaikhoan(nguoiDung);
-                    if (check){
+                    if (check) {
                         Toast.makeText(TaoTaiKhoan.this, "dang ki thanh cong", Toast.LENGTH_SHORT).show();
                         finish();
-                    }else {
+                    } else {
                         Toast.makeText(TaoTaiKhoan.this, "dang ki that bai", Toast.LENGTH_SHORT).show();
                     }
 

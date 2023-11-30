@@ -26,21 +26,22 @@ public class BaoThuc extends AppCompatActivity {
     AlarmManager alarmManager;
 
     PendingIntent pendingIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bao_thuc);
 
 
-        btndath = (Button)findViewById(R.id.dath);
-        btndunglai = (Button)findViewById(R.id.dunglai);
-        txth = (TextView)findViewById(R.id.txth);
-        timePicker = (TimePicker)findViewById(R.id.timepicker);
+        btndath = (Button) findViewById(R.id.dath);
+        btndunglai = (Button) findViewById(R.id.dunglai);
+        txth = (TextView) findViewById(R.id.txth);
+        timePicker = (TimePicker) findViewById(R.id.timepicker);
 
         calendar = Calendar.getInstance();
-        alarmManager = (AlarmManager)getSystemService(ALARM_SERVICE);
+        alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
-        Intent intent = new Intent(BaoThuc.this,AlarmReceiver.class);
+        Intent intent = new Intent(BaoThuc.this, AlarmReceiver.class);
         btndunglai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,8 +52,8 @@ public class BaoThuc extends AppCompatActivity {
         btndath.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calendar.set(Calendar.HOUR_OF_DAY,timePicker.getCurrentHour());
-                calendar.set(Calendar.MINUTE,timePicker.getCurrentMinute());
+                calendar.set(Calendar.HOUR_OF_DAY, timePicker.getCurrentHour());
+                calendar.set(Calendar.MINUTE, timePicker.getCurrentMinute());
 
 
                 int gio = timePicker.getCurrentHour();
@@ -62,19 +63,19 @@ public class BaoThuc extends AppCompatActivity {
                 String string_phut = String.valueOf(phut);
 
 
-                if (gio > 12){
+                if (gio > 12) {
                     string_gio = String.valueOf(gio - 12);
                 }
-                if (phut < 10){
+                if (phut < 10) {
                     string_phut = "0" + String.valueOf(phut);
                 }
                 pendingIntent = PendingIntent.getBroadcast(
-                        BaoThuc.this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT
+                        BaoThuc.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT
                 );
-                alarmManager.set(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+                alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
 
 
-                txth.setText("Đặt GIỜ"+ string_gio + ":" + string_phut);
+                txth.setText("Đặt GIỜ" + string_gio + ":" + string_phut);
 
             }
         });

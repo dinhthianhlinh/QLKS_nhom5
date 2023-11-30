@@ -2,7 +2,7 @@ package com.example.quanlikhachsan_nhom5.model;
 
 public class QuanLyP {
 
-    String name, phone, email,  numPeople,  checkIn,  checkOut,  totalPrice,  roomNumber,  paymentInfo;
+    String name, phone, email, numPeople, checkIn, checkOut, totalPrice, roomNumber, paymentInfo;
 
     public QuanLyP(String name, String phone, String email, String numPeople, String checkIn, String checkOut, String totalPrice, String roomNumber, String paymentInfo) {
         this.name = name;

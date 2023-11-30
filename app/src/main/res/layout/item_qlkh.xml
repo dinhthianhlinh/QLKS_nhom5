@@ -20,10 +20,10 @@
             <TextView
                 android:id="@+id/txtsott"
                 android:layout_width="50dp"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:layout_height="wrap_content"
-                android:textSize="13dp" />
+                android:gravity="center"
+                android:textSize="13dp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="50dp"
@@ -44,39 +44,40 @@
                 android:id="@+id/txtten"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txttuoi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="italic"
-                />
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/txtgioitinh"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
+
             <TextView
                 android:id="@+id/txtsodienthoai"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 />
+
             <TextView
                 android:id="@+id/txtquequan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 />
+
             <TextView
                 android:id="@+id/txtcancuoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
                 />
+
             <TextView
                 android:id="@+id/txtlandatphong"
                 android:layout_width="match_parent"
@@ -84,14 +85,14 @@
 
                 />
         </LinearLayout>
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="0dp"
-            android:paddingLeft="5dp"
-            android:layout_weight="0.1"
             android:layout_height="match_parent"
+            android:layout_weight="0.1"
             android:gravity="center"
-            >
+            android:orientation="vertical"
+            android:paddingLeft="5dp">
 
             <ImageButton
                 android:id="@+id/btnDeleteQLKH"
@@ -100,13 +101,12 @@
                 android:background="@drawable/baseline_delete_24"
 
                 />
+
             <ImageButton
                 android:id="@+id/btnEditQLKH"
                 android:layout_width="38dp"
                 android:layout_height="35dp"
-                android:background="@drawable/baseline_edit_24"
-                />
-
+                android:background="@drawable/baseline_edit_24" />
 
 
         </LinearLayout>
