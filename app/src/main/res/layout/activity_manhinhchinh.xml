@@ -11,17 +11,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#4E1F1F"
         >
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/toolbar"
+
             />
 
         <FrameLayout
             android:id="@+id/fragmentlayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@drawable/red"
             android:layout_weight="1"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView

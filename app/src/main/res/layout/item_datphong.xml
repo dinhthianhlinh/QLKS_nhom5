@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_margin="10dp"
+
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -13,66 +14,156 @@
         android:gravity="center|start"
         >
         <ImageView
-            android:layout_width="200dp"
+            android:layout_width="150dp"
             android:layout_height="200dp"
-            android:src="@drawable/phong"
+            android:src="@drawable/khachsan1"
 
             />
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/txtid"
-                android:layout_width="150dp"
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="id:"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                />
-            <TextView
-                android:id="@+id/txtsophong"
-                android:layout_width="150dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+
+                    />
+                <TextView
+                    android:id="@+id/txtid"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sophong:"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                />
-            <TextView
-                android:id="@+id/txtsotang"
-                android:layout_width="150dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="số phòng :"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtsophong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="sotang:"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                />
-            <TextView
-                android:id="@+id/txtgiaphong"
-                android:layout_width="150dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="số tầng :"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtsotang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="giaphong:"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                />
-            <TextView
-                android:id="@+id/txthangphong"
-                android:layout_width="150dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Giá phòng :"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txtgiaphong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hangphong:"
-                android:textSize="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/black"
-                android:layout_margin="5dp"
-                />
+                android:orientation="horizontal"
+                >
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hạng phòng :"
+                    android:textSize="20dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+
+                <TextView
+                    android:id="@+id/txthangphong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/black"
+                    android:layout_margin="5dp"
+                    />
+            </LinearLayout>
+
+
+
+
         </LinearLayout>
     </LinearLayout>
 

@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class Dbhelper extends SQLiteOpenHelper {
 
     public Dbhelper(Context context) {
-        super(context, "QLKS", null, 40);
+        super(context, "QLKS", null, 47);
     }
 
     @Override
@@ -24,90 +24,90 @@ public class Dbhelper extends SQLiteOpenHelper {
 
         String Tang1 = "CREATE TABLE TANG1 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(Tang1);
-        db.execSQL("INSERT INTO TANG1 VALUES (1,'101','1','200000d','Phong doi')," +
-                "(2,'102','1','100000d','Phong don')," +
-                "(3,'103','1','100000d','Phong don')," +
-                "(4,'104','1','100000d','Phong don')," +
-                "(5,'105','1','200000d','Phong doi')," +
-                "(6,'106','1','200000d','Phong doi')," +
-                "(7,'107','1','100000d','Phong don')," +
-                "(8,'108','1','200000d','Phong doi')," +
-                "(9,'108','1','200000d','Phong doi')," +
-                "(10,'110','1','200000d','Phong doi')");
+        db.execSQL("INSERT INTO TANG1 VALUES (1,'101','1','200000VND','Phòng đơn')," +
+                "(2,'102','1','100000VND','Phòng đơn')," +
+                "(3,'103','1','100000VND','Phòng đơn')," +
+                "(4,'104','1','100000VND','Phòng đơn')," +
+                "(5,'105','1','100000VND','Phòng đơn')," +
+                "(6,'106','1','100000VND','Phòng đơn')," +
+                "(7,'107','1','100000VND','Phòng đơn')," +
+                "(8,'108','1','200000VND','Phòng đơn')," +
+                "(9,'108','1','200000VND','Phòng đơn')," +
+                "(10,'110','1','200000VND','Phòng đơn')");
 
         String Tang2 = "CREATE TABLE TANG2 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(Tang2);
-        db.execSQL("INSERT INTO TANG2 VALUES (1,'201','2','200000d','Phong doi')," +
-                "(2,'202','2','100000d','Phong don')," +
-                "(3,'203','2','200000d','Phong doi')," +
-                "(4,'204','2','100000d','Phong don')," +
-                "(5,'205','2','200000d','Phong doi')," +
-                "(6,'206','2','200000d','Phong doi')," +
-                "(7,'207','2','100000d','Phong don')," +
-                "(8,'208','2','200000d','Phong doi')," +
-                "(9,'209','2','100000d','Phong don')," +
-                "(10,'210','2','200000d','Phong doi')");
+        db.execSQL("INSERT INTO TANG2 VALUES (1,'201','2','200000d','Phòng đơn')," +
+                "(2,'202','2','100000VND','Phòng đơn')," +
+                "(3,'203','2','200000VND','Phòng đôi')," +
+                "(4,'204','2','100000VND','Phòng đôi')," +
+                "(5,'205','2','200000VND','Phòng đôi')," +
+                "(6,'206','2','200000VND','Phòng đôi')," +
+                "(7,'207','2','100000VND','Phòng đôi')," +
+                "(8,'208','2','200000VND','Phòng đôi')," +
+                "(9,'209','2','100000VND','Phòng đôi')," +
+                "(10,'210','2','200000VND','Phòng đôi')");
 
         String Tang3 = "CREATE TABLE TANG3 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(Tang3);
-        db.execSQL("INSERT INTO TANG3 VALUES (1,'301','3','200000d','Phong doi')," +
-                "(2,'302','3','100000d','Phong don')," +
-                "(3,'303','3','200000d','Phong doi')," +
-                "(4,'304','3','100000d','Phong don')," +
-                "(5,'305','3','200000d','Phong doi')," +
-                "(6,'306','3','200000d','Phong doi')," +
-                "(7,'307','3','100000d','Phong don')," +
-                "(8,'308','3','200000d','Phong doi')," +
-                "(9,'309','3','100000d','Phong don')," +
-                "(10,'310','3','200000d','Phong doi')");
+        db.execSQL("INSERT INTO TANG3 VALUES (1,'301','3','200000VND','Phòng đôi')," +
+                "(2,'302','3','100000VND','Phòng đơn')," +
+                "(3,'303','3','200000VND','Phòng đôi')," +
+                "(4,'304','3','100000VND','Phòng đơn')," +
+                "(5,'305','3','200000VND','Phòng đôi')," +
+                "(6,'306','3','200000VND','Phòng đôi')," +
+                "(7,'307','3','100000VND','Phòng đơn')," +
+                "(8,'308','3','200000VND','Phòng đôi')," +
+                "(9,'309','3','100000VND','Phòng đơn')," +
+                "(10,'310','3','200000VND','Phòng đôi')");
 
         String Tang4 = "CREATE TABLE TANG4 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(Tang4);
-        db.execSQL("INSERT INTO TANG4 VALUES (1,'301','4','200000d','Phong doi')," +
-                "(2,'402','4','100000d','Phong don')," +
-                "(3,'403','4','200000d','Phong doi')," +
-                "(4,'404','4','100000d','Phong don')," +
-                "(5,'405','4','200000d','Phong doi')," +
-                "(6,'406','4','200000d','Phong doi')," +
-                "(7,'407','4','100000d','Phong don')," +
-                "(8,'408','4','200000d','Phong doi')," +
-                "(9,'409','4','100000d','Phong don')," +
-                "(10,'410','4','200000d','Phong doi')");
+        db.execSQL("INSERT INTO TANG4 VALUES (1,'301','4','200000VND','Phòng đôi')," +
+                "(2,'402','4','100000VND','Phòng đơn')," +
+                "(3,'403','4','200000VND','Phòng đôi')," +
+                "(4,'404','4','100000VND','Phòng đơn')," +
+                "(5,'405','4','200000VND','Phòng đôi')," +
+                "(6,'406','4','200000VND','Phòng đôi')," +
+                "(7,'407','4','100000VND','Phòng đơn')," +
+                "(8,'408','4','200000VND','Phòng đôi')," +
+                "(9,'409','4','100000VND','Phòng đơn')," +
+                "(10,'410','4','200000VND','Phòng đôi')");
 
 
 
         String DatPhong = "CREATE TABLE DATPHONG (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(DatPhong);
-        db.execSQL("INSERT INTO DATPHONG VALUES (1,'301','4','200000d','Phong doi')," +
-                "(2,'402','4','100000d','Phong don')," +
-                "(3,'403','4','200000d','Phong doi')," +
-                "(4,'404','4','100000d','Phong don')," +
-                "(5,'405','4','200000d','Phong doi')," +
-                "(6,'406','4','200000d','Phong doi')," +
-                "(7,'407','4','100000d','Phong don')," +
-                "(8,'408','4','200000d','Phong doi')," +
-                "(9,'409','4','100000d','Phong don')," +
-                "(10,'301','4','200000d','Phong doi')," +
-                "(11,'302','3','100000d','Phong don')," +
-                "(12,'303','3','200000d','Phong doi')," +
-                "(13,'304','3','100000d','Phong don')," +
-                "(14,'305','3','200000d','Phong doi')," +
-                "(15,'306','3','200000d','Phong doi')," +
-                "(16,'307','3','100000d','Phong don')," +
-                "(17,'308','3','200000d','Phong doi')," +
-                "(18,'309','3','100000d','Phong don')," +
-                "(19,'202','2','100000d','Phong don')," +
-                "(20,'203','2','200000d','Phong doi')," +
-                "(21,'204','2','100000d','Phong don')," +
-                "(22,'205','2','200000d','Phong doi')," +
-                "(23,'206','2','200000d','Phong doi')," +
-                "(24,'207','2','100000d','Phong don')," +
-                "(25,'208','2','200000d','Phong doi')," +
-                "(26,'209','2','100000d','Phong don')," +
-                "(27,'210','2','200000d','Phong doi'),"+
-                "(28,'102','1','100000d','Phong don')," +
-                "(29,'103','1','100000d','Phong don')," +
-                "(30,'410','4','200000d','Phong doi')");
+        db.execSQL("INSERT INTO DATPHONG VALUES (1,'301','4','200000VND','Phòng đôi')," +
+                "(2,'402','4','100000VND','Phòng đơn')," +
+                "(3,'403','4','200000VND','Phòng đôi')," +
+                "(4,'404','4','100000VND','Phòng đơn')," +
+                "(5,'405','4','200000VND','Phòng đôi')," +
+                "(6,'406','4','200000VND','Phòng đôi')," +
+                "(7,'407','4','100000VND','Phòng đơn')," +
+                "(8,'408','4','200000VND','Phòng đôi')," +
+                "(9,'409','4','100000VND','Phòng đơn')," +
+                "(10,'301','4','200000VND','Phòng đôi')," +
+                "(11,'302','3','100000VND','Phòng đơn')," +
+                "(12,'303','3','200000VND','Phòng đôi')," +
+                "(13,'304','3','100000VND','Phòng đơn')," +
+                "(14,'305','3','200000VND','Phòng đôi')," +
+                "(15,'306','3','200000VND','Phòng đôi')," +
+                "(16,'307','3','100000VND','Phòng đơn')," +
+                "(17,'308','3','200000VND','Phòng đôi')," +
+                "(18,'309','3','100000VND','Phòng đơn')," +
+                "(19,'202','2','100000VND','Phòng đơn')," +
+                "(20,'203','2','200000VND','Phòng đôi')," +
+                "(21,'204','2','100000d','Phòng đơn')," +
+                "(22,'205','2','100000VND','Phòng đôi')," +
+                "(23,'206','2','200000VND','Phòng đôi')," +
+                "(24,'207','2','100000VND','Phòng đơn')," +
+                "(25,'208','2','200000VND','Phong doi')," +
+                "(26,'209','2','100000VND','Phòng đơn')," +
+                "(27,'210','2','200000VND','Phòng đôi'),"+
+                "(28,'102','1','100000VND','Phòng đơn')," +
+                "(29,'103','1','100000VND','Phòng đơn')," +
+                "(30,'410','4','200000VND','Phòng đôi')");
 
 
 

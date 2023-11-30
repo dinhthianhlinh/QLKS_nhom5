@@ -3,27 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="210dp"
     android:orientation="vertical"
-    android:background="@drawable/hender">
+    android:background="@drawable/node3">
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_margin="20dp"
-        android:src="@drawable/khachsan"/>
+        android:src="@drawable/noel"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="HELLO ADMIN"
+        android:textSize="15dp"
+        android:text="hotline"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
         android:textColor="@color/white"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="LINHDTAPH35049@FPT.EDU.VN"
+        android:textSize="15dp"
+        android:text="HLD Hotel xin chào quý khách "
         android:textStyle="bold"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="20dp"
         android:textColor="@color/white"/>
 
 </LinearLayout>
