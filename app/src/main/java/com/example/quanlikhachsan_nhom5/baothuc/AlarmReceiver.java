@@ -9,7 +9,7 @@ public class AlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.e("Tôi trong Rsv", "xin chào ");
-        Intent myIntent = new Intent(context,Music.class);
+        Intent myIntent = new Intent(context, Music.class);
         context.startService(myIntent);
     }
 }

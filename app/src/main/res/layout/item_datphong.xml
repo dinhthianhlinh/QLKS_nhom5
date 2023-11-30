@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_margin="10dp"
+    android:layout_height="wrap_content"
 
-    android:layout_height="wrap_content">
+    android:layout_margin="10dp">
 
     <LinearLayout
         android:id="@+id/lindp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:background="@drawable/khungdatphong"
         android:gravity="center|start"
-        >
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:src="@drawable/khachsan1"
 
             />
+
         <LinearLayout
             android:layout_width="210dp"
             android:layout_height="wrap_content"
@@ -28,16 +29,16 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
+                    android:textColor="@color/black"
                     android:textSize="20dp"
                     android:textStyle="italic"
-                    android:textColor="@color/black"
 
                     />
 
@@ -55,18 +56,17 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="số phòng :"
-                    android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text="số phòng :"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtsophong"
@@ -78,90 +78,84 @@
                     android:textSize="20dp"
                     android:textStyle="italic" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="số tầng :"
-                    android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text="số tầng :"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtsotang"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Giá phòng :"
-                    android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text="Giá phòng :"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txtgiaphong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+                android:orientation="horizontal">
+
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hạng phòng :"
-                    android:textSize="20dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text="Hạng phòng :"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txthangphong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=""
-                    android:textSize="15dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    />
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="italic" />
             </LinearLayout>
-
-
 
 
         </LinearLayout>

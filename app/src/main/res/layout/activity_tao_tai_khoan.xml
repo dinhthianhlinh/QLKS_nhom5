@@ -11,70 +11,73 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TAO TAI KHOẢN"
-        android:textStyle="bold"
         android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="TAO TAI KHOẢN"
         android:textColor="@color/black"
         android:textSize="50dp"
-        android:gravity="center"
-        />
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/tuserdk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/tentaikhoan"/>
+        android:hint="@string/tentaikhoan" />
+
     <EditText
         android:id="@+id/tpassdk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/matkhau"/>
+        android:hint="@string/matkhau" />
+
     <EditText
         android:id="@+id/tpassnhaplai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/nhaplaipass"/>
+        android:hint="@string/nhaplaipass" />
+
     <EditText
         android:id="@+id/ttendk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/tendangki"/>
+        android:hint="@string/tendangki" />
+
     <EditText
         android:id="@+id/tsdtdk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/sdt"/>
+        android:hint="@string/sdt" />
 
     <EditText
         android:id="@+id/tdiatri"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="@string/que"/>
+        android:hint="@string/que" />
 
     <EditText
         android:id="@+id/linkAvata"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:hint="Nhập link ảnh"/>
+        android:hint="Nhập link ảnh" />
+
     <Button
         android:id="@+id/tbtndk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dang kí"
-        android:textSize="30dp"
-        android:textColor="@color/white"
-        android:textStyle="italic"
         android:layout_gravity="center"
         android:layout_margin="16dp"
         android:backgroundTint="#95BD3F3F"
-        />
-
+        android:text="Dang kí"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="italic" />
 
 
 </LinearLayout>

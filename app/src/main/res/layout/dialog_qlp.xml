@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:orientation="vertical"
     android:padding="16dp">
 
     <EditText
@@ -16,16 +16,15 @@
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:hint="Số điện thoại" />
+        android:hint="Số điện thoại"
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:hint="Email" />
-
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
 
 
     <!-- Sử dụng DatePicker để chọn ngày trả phòng -->
@@ -43,12 +42,13 @@
         android:text="Chọn thời gian"
 
         />
+
     <TextView
         android:id="@+id/tvCheckIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="thời điểm đặt"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:text="thời điểm đặt" />
 
     <!-- Sử dụng DatePicker để chọn ngày nhận phòng -->
 
@@ -57,17 +57,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="thời điểm tra" />
+
     <TextView
-        android:layout_marginTop="50dp"
         android:id="@+id/Sotienphaitra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:text="Số tiền phải trả" />
-
-
-
-
-
 
 
     <!-- Hiển thị số phòng cho tầng vừa chọn -->
@@ -91,15 +87,15 @@
         <RadioButton
             android:id="@+id/radioDirectPayment"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Thanh toán trực tiếp" />
 
         <RadioButton
             android:id="@+id/radioOnlinePayment"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Thanh toán online" />
 
     </RadioGroup>
@@ -109,9 +105,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đặt Phòng" />
-
-
-
 
 
 </LinearLayout>

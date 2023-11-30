@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
         btnDangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Login.this,Register.class));
+                startActivity(new Intent(Login.this, Register.class));
             }
         });
 
@@ -43,14 +43,11 @@ public class Login extends AppCompatActivity {
                 String pass = edtPass.getText().toString();
 
 
-
-
-
-                boolean  check = nguoiDungDao.KiemTraDangNhap(user,pass);
-                if (check){
+                boolean check = nguoiDungDao.KiemTraDangNhap(user, pass);
+                if (check) {
                     startActivity(new Intent(Login.this, Manhinhchinh.class));
 
-                }else {
+                } else {
                     Toast.makeText(Login.this, "ten dang nhap hoac mat khau sai", Toast.LENGTH_SHORT).show();
                 }
             }

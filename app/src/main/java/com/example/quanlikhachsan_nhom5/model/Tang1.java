@@ -2,7 +2,7 @@ package com.example.quanlikhachsan_nhom5.model;
 
 public class Tang1 {
     private int id;
-    private String sophong , sotang, giaphong, hangphong;
+    private String sophong, sotang, giaphong, hangphong;
 
     public Tang1() {
 

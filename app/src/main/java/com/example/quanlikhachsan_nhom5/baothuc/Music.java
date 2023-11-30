@@ -13,6 +13,7 @@ import com.example.quanlikhachsan_nhom5.R;
 public class Music extends Service {
 
     MediaParser mediaParser;
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -22,7 +23,7 @@ public class Music extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        Log.e("TÔI TRONG MISIC","HELLO");
+        Log.e("TÔI TRONG MISIC", "HELLO");
         return START_NOT_STICKY;
     }
 }

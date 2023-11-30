@@ -1,71 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center|top"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/dichvudoan"
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="30dp"
-        android:id="@+id/dichvudoan">
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/doan"/>
+            android:src="@drawable/doan" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:layout_marginLeft="30dp"
+            android:text="GỌI ĐỒ ĂN"
+            android:textColor="@color/black"
             android:textSize="30dp"
-            android:text="GỌI ĐỒ ĂN"/>
+            android:textStyle="bold" />
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/dichvubaothuc"
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="30dp"
-        android:id="@+id/dichvubaothuc">
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/dongho"/>
+            android:src="@drawable/dongho" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:layout_marginLeft="30dp"
+            android:text="DỊCH VỤ BÁO THỨC"
+            android:textColor="@color/black"
             android:textSize="30dp"
-            android:text="DỊCH VỤ BÁO THỨC"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
+
     <LinearLayout
+        android:id="@+id/dichvudatui"
         android:layout_width="400dp"
         android:layout_height="200dp"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="30dp"
-        android:id="@+id/dichvudatui">
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/giat"/>
+            android:src="@drawable/giat" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             android:layout_marginLeft="30dp"
+            android:text="DỊCH VỤ GIẶT ỦI"
+            android:textColor="@color/black"
             android:textSize="30dp"
-            android:text="DỊCH VỤ GIẶT ỦI"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 

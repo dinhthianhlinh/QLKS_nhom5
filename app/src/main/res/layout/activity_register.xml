@@ -4,160 +4,155 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:gravity="center"
-    android:orientation="vertical"
     android:background="@drawable/grey"
+    android:gravity="center"
+    android:orientation="vertical"
 
     tools:context=".Register">
-<LinearLayout
-    android:layout_marginTop="100dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutusername"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-android:layout_marginRight="16dp"
-        android:hint="Username"
-        android:textColorHint="@color/white">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userdk"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutusername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-           />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Username"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userdk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/white"
-        android:hint="Password"
-        android:textColorHint="@color/white">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passdk"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Password"
             android:textColorHint="@color/white"
-          />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passdk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutenterPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        app:endIconMode="password_toggle"
-        app:endIconTint="@color/white"
-        android:hint="Enter the password"
-        android:textColorHint="@color/white">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/passnhaplai"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutenterPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Enter the password"
             android:textColorHint="@color/white"
-           />
-    </com.google.android.material.textfield.TextInputLayout>
+            app:endIconMode="password_toggle"
+            app:endIconTint="@color/white">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutenterregistrationname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="registration name "
-        android:textColorHint="@color/white">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tendk"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passnhaplai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutenterregistrationname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-           />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="registration name "
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tendk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutsdt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="phone number"
-        android:textColorHint="@color/white">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/sdtdk"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutsdt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-           />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="phone number"
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sdtdk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutaddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:hint="Address "
-        android:textColorHint="@color/white">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/diatri"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutaddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-android:layout_marginTop="15dp"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:layout_marginBottom="40dp"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:hint="Address "
+            android:textColorHint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/diatri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="40dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
-</LinearLayout>
+    </LinearLayout>
 
     <Button
         android:id="@+id/btndk"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:text="Sign up "
-        android:textSize="15dp"
-        android:textColor="@color/black"
-
         android:layout_gravity="center"
         android:layout_margin="16dp"
         android:backgroundTint="@color/white"
-        />
+
+        android:text="Sign up "
+        android:textColor="@color/black"
+        android:textSize="15dp" />
 
 </LinearLayout>

@@ -31,7 +31,7 @@ public class Tang3Dao {
 
         }
 
-        return  list;
+        return list;
 
 
     }

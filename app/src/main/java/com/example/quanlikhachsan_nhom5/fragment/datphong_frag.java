@@ -42,8 +42,7 @@ public class datphong_frag extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.datphong_frag,container,false);
-
+        View view = inflater.inflate(R.layout.datphong_frag, container, false);
 
 
         RecyclerView recyclerView = view.findViewById(R.id.Rcvdp);
@@ -126,10 +125,8 @@ public class datphong_frag extends Fragment {
         recyclerView.setAdapter(datPhongAdapter);
 
 
-
         return view;
     }
-
 
 
     private void openDialogNgayGio(Dialog parentDialog, String giaphong) {

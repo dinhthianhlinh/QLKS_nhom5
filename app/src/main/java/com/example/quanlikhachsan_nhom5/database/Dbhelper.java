@@ -21,7 +21,6 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(3,'nguyenhoc','987654321','hanam','hoc34','12347','https://i.pinimg.com/originals/68/b1/10/68b110117407a3abe8dfe17734031dd7.jpg',3)");
 
 
-
         String Tang1 = "CREATE TABLE TANG1 (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(Tang1);
         db.execSQL("INSERT INTO TANG1 VALUES (1,'101','1','200000VND','Phòng đơn')," +
@@ -75,7 +74,6 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(10,'410','4','200000VND','Phòng đôi')");
 
 
-
         String DatPhong = "CREATE TABLE DATPHONG (id integer primary key autoincrement, sophong text, sotang text, giaphing text, hangphong text)";
         db.execSQL(DatPhong);
         db.execSQL("INSERT INTO DATPHONG VALUES (1,'301','4','200000VND','Phòng đôi')," +
@@ -104,18 +102,16 @@ public class Dbhelper extends SQLiteOpenHelper {
                 "(24,'207','2','100000VND','Phòng đơn')," +
                 "(25,'208','2','200000VND','Phong doi')," +
                 "(26,'209','2','100000VND','Phòng đơn')," +
-                "(27,'210','2','200000VND','Phòng đôi'),"+
+                "(27,'210','2','200000VND','Phòng đôi')," +
                 "(28,'102','1','100000VND','Phòng đơn')," +
                 "(29,'103','1','100000VND','Phòng đơn')," +
                 "(30,'410','4','200000VND','Phòng đôi')");
 
 
-
-
         String quanlykhachhang = "CREATE TABLE QLKH (STT integer primary key autoincrement, TEN text, TUOI integer, GIOITINH text,  SODT integer," +
                 " QUEQUAN text, CANCUOC integer,SOLANDP integer)";
         db.execSQL(quanlykhachhang);
-        db.execSQL("INSERT INTO QLKH VALUES (1,'dinhlinh',19,'nam',0971222222,'hà nam',12345, 2)" );
+        db.execSQL("INSERT INTO QLKH VALUES (1,'dinhlinh',19,'nam',0971222222,'hà nam',12345, 2)");
 
 
         String createTableQLP = "CREATE TABLE QLP (" +
@@ -137,12 +133,11 @@ public class Dbhelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO QLP (name, phone, email, numPeople, checkIn, checkOut, totalPrice, roomNumber, paymentInfo) VALUES ('Tran Thi B', '0987654321', 'tranthib@example.com', '1', '05/01/2023 10:00', '07/01/2023 09:00', '1500000', '102', 'Bạn đã thanh toán thành công')");
 
 
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        if (i != i1){
+        if (i != i1) {
             db.execSQL("DROP TABLE IF EXISTS NGUOIDUNG");
             db.execSQL("DROP TABLE IF EXISTS QLKH");
             db.execSQL("DROP TABLE IF EXISTS QLP");
