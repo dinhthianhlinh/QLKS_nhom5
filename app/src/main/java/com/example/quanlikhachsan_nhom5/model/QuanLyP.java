@@ -87,4 +87,20 @@ public class QuanLyP {
     public void setPaymentInfo(String paymentInfo) {
         this.paymentInfo = paymentInfo;
     }
+
+    private boolean visible;
+
+    public QuanLyP(/* các tham số khác */) {
+        // Khởi tạo các thuộc tính khác
+        this.visible = true; // Mặc định là hiển thị
+    }
+
+    // Getter và setter cho thuộc tính visible
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
 }
